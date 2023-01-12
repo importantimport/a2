@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { msg, str } from '@lit/localize'
 import litLogo from './assets/lit.svg'
 
 import 'material-icons/iconfont/filled.css'
@@ -14,6 +15,9 @@ import './components/nav'
  */
 @customElement('a2z-app')
 export class App extends LitElement {
+  @property()
+  name = 'Lit'
+
   /**
    * Copy for the read the docs hint.
    */
@@ -36,7 +40,9 @@ export class App extends LitElement {
           <img src=${litLogo} class="logo lit" alt="Lit logo" />
         </a>
       </div>
-      <slot></slot>
+      <h1>${msg(str`Vite + ${this.name}`, {
+        desc: 'Vite + Lit'
+      })}</h1>
       <div class="card">
         <button @click=${this._onClick} part="button">
           count is ${this.count}
