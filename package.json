@@ -10,7 +10,8 @@
   "dependencies": {
     "@lit/localize": "^0.11.4",
     "@material/web": "^1.0.0-pre.1",
-    "lit": "^2.4.1"
+    "lit": "^2.4.1",
+    "material-icons": "^1.13.1"
   },
   "devDependencies": {
     "@lit/localize-tools": "^0.6.6",

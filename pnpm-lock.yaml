@@ -5,6 +5,7 @@ specifiers:
   '@lit/localize-tools': ^0.6.6
   '@material/web': ^1.0.0-pre.1
   lit: ^2.4.1
+  material-icons: ^1.13.1
   rollup-plugin-minify-html-literals: ^1.2.6
   typescript: ^4.9.3
   vite: ^4.0.0
@@ -13,6 +14,7 @@ dependencies:
   '@lit/localize': 0.11.4
   '@material/web': 1.0.0-pre.1
   lit: 2.6.1
+  material-icons: 1.13.1
 
 devDependencies:
   '@lit/localize-tools': 0.6.6
@@ -522,6 +524,10 @@ packages:
     dependencies:
       sourcemap-codec: 1.4.8
     dev: true
+
+  /material-icons/1.13.1:
+    resolution: {integrity: sha512-6EwhlEa4rwydNSWw11ig1oz/h/KcarJXn4n50Wd69v5Eh026Y6xBo9zLPeX4iF8+qUZV862X0AUUA0m0VaihWg==}
+    dev: false
 
   /merge2/1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
