@@ -8,10 +8,12 @@
     "build": "tsc && vite build"
   },
   "dependencies": {
+    "@lit/localize": "^0.11.4",
     "@material/web": "^1.0.0-pre.1",
     "lit": "^2.4.1"
   },
   "devDependencies": {
+    "@lit/localize-tools": "^0.6.6",
     "rollup-plugin-minify-html-literals": "^1.2.6",
     "typescript": "^4.9.3",
     "vite": "^4.0.0"
