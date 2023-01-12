@@ -4,6 +4,8 @@ import litLogo from './assets/lit.svg'
 
 import 'material-icons/iconfont/filled.css'
 
+import './components/nav'
+
 /**
  * An example element.
  *
@@ -41,6 +43,7 @@ export class App extends LitElement {
         </button>
       </div>
       <p class="read-the-docs">${this.docsHint}</p>
+      <a2z-nav></a2z-nav>
     `
   }
 
