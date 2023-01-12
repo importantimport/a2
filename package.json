@@ -8,6 +8,7 @@
     "build": "tsc && vite build"
   },
   "dependencies": {
+    "@material/web": "^1.0.0-pre.1",
     "lit": "^2.4.1"
   },
   "devDependencies": {
