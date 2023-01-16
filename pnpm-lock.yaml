@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@lit-labs/router': ^0.1.1
   '@lit/localize': ^0.11.4
   '@lit/localize-tools': ^0.6.6
   '@material/web': ^1.0.0-pre.1
@@ -11,6 +12,7 @@ specifiers:
   vite: ^4.0.0
 
 dependencies:
+  '@lit-labs/router': 0.1.1
   '@lit/localize': 0.11.4
   '@material/web': 1.0.0-pre.1
   lit: 2.6.1
@@ -221,6 +223,12 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@lit-labs/router/0.1.1:
+    resolution: {integrity: sha512-B2WYOXmI1vXAZKKkfGWDhe/Ki8W7ZsopFx7uD9ZvdaEFbFjxzqcmBGoK5v2RX1jceG1lmDfdHvCGyXxiy1zqYg==}
+    dependencies:
+      lit: 2.6.1
+    dev: false
 
   /@lit-labs/ssr-dom-shim/1.0.0:
     resolution: {integrity: sha512-ic93MBXfApIFTrup4a70M/+ddD8xdt2zxxj9sRwHQzhS9ag/syqkD8JPdTXsc1gUy2K8TTirhlCqyTEM/sifNw==}
