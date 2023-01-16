@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@lit-labs/motion': ^1.0.3
   '@lit-labs/router': ^0.1.1
   '@lit/localize': ^0.11.4
   '@lit/localize-tools': ^0.6.6
@@ -12,6 +13,7 @@ specifiers:
   vite: ^4.0.0
 
 dependencies:
+  '@lit-labs/motion': 1.0.3
   '@lit-labs/router': 0.1.1
   '@lit/localize': 0.11.4
   '@material/web': 1.0.0-pre.1
@@ -223,6 +225,12 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@lit-labs/motion/1.0.3:
+    resolution: {integrity: sha512-y62SxlUTeFtoQTS8/KqAnOnOTdm0FpB23PgFFc99lPj9T5Gg0uktzRmmmqxPaGoNeRg2cLcPpbvK8iEo8CWMoQ==}
+    dependencies:
+      lit: 2.6.1
+    dev: false
 
   /@lit-labs/router/0.1.1:
     resolution: {integrity: sha512-B2WYOXmI1vXAZKKkfGWDhe/Ki8W7ZsopFx7uD9ZvdaEFbFjxzqcmBGoK5v2RX1jceG1lmDfdHvCGyXxiy1zqYg==}
