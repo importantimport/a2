@@ -2,6 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { msg, str } from '@lit/localize'
 import litLogo from '../assets/lit.svg'
+import '@material/web/button/tonal-button'
 
 @customElement('a2z-index')
 export class Index extends LitElement {
@@ -36,9 +37,12 @@ export class Index extends LitElement {
         })}
       </h1>
       <div class="card">
-        <button @click=${this._onClick} part="button">
-          count is ${this.count}
-        </button>
+        <md-tonal-button
+          label="count is ${this.count}"
+          @click=${this._onClick}
+          part="button"
+        >
+        </md-tonal-button>
       </div>
       <p class="read-the-docs">${this.docsHint}</p>
     `
