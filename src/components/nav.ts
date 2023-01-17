@@ -10,7 +10,7 @@ import '@material/web/icon/icon'
 export class Nav extends LitElement {
   render() {
     return html`
-      <md-navigation-bar>
+      <md-navigation-bar hideInactiveLabels>
         <md-navigation-tab label=${msg('Downloads')}>
           <md-icon slot="activeIcon">downloads</md-icon>
           <md-icon slot="inactiveIcon">downloads</md-icon>
