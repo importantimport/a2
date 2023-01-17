@@ -2,7 +2,6 @@ import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import { Router } from '@lit-labs/router'
 
-import 'material-icons/iconfont/filled.css'
 
 import './components/nav'
 
