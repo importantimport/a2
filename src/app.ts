@@ -7,6 +7,9 @@ import 'material-icons/iconfont/filled.css'
 import './components/index'
 import './components/nav'
 
+// @ts-ignore: Property 'UrlPattern' does not exist 
+if (!globalThis.URLPattern) await import('urlpattern-polyfill')
+
 @customElement('a2z-app')
 export class App extends LitElement {
   private router = new Router(this, [
