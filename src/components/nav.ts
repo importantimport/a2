@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
 import '@material/web/navigationbar/navigation-bar'
@@ -21,6 +21,14 @@ export class Nav extends LitElement {
       </md-navigation-bar>
     `
   }
+
+  static styles = css`
+    md-navigation-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+    }
+  `
 }
 
 declare global {
