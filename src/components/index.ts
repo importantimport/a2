@@ -6,13 +6,13 @@ import '@material/web/button/tonal-button'
 
 @customElement('a2z-index')
 export class Index extends LitElement {
-  @property()
+  @property({ type: String })
   name = 'Lit'
 
   /**
    * Copy for the read the docs hint.
    */
-  @property()
+  @property({ type: String })
   docsHint = 'Click on the Vite and Lit logos to learn more'
 
   /**
