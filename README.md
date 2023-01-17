@@ -7,3 +7,9 @@
 **[<kbd> <br> Fork <br> </kbd>](https://github.com/importantimport/a2z/fork)**
 
 </div>
+
+## TODO
+
+- RxJS
+- RxDB (+ RxStorage LokiJS)
+- Tauri v2 (+ Mobile)
