@@ -5,7 +5,7 @@ import { msg, str } from '@lit/localize'
 import litLogo from '../assets/lit.svg'
 import '@material/web/button/tonal-button'
 
-import { server } from '../lib/rpc'
+import { server } from '../lib/rpc/server'
 
 @customElement('a2z-index')
 export class Index extends LitElement {
