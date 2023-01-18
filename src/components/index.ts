@@ -1,8 +1,11 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { until } from 'lit/directives/until.js'
 import { msg, str } from '@lit/localize'
 import litLogo from '../assets/lit.svg'
 import '@material/web/button/tonal-button'
+
+import { server } from '../lib/rpc'
 
 @customElement('a2z-index')
 export class Index extends LitElement {
@@ -35,6 +38,12 @@ export class Index extends LitElement {
         ${msg(str`Vite + ${this.name}`, {
           desc: 'Vite + Lit',
         })}
+        <small>
+          ${until(
+            server.getVersion().then((res) => (res ? res.version : 'Error')),
+            'Loading...'
+          )}
+        </small>
       </h1>
       <div class="card">
         <md-tonal-button
