@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
-import { customElement } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
 import { msg } from '@lit/localize'
+import type { Router } from '@lit-labs/router'
 
 import '@material/web/navigationbar/navigation-bar'
 import '@material/web/navigationtab/navigation-tab'
@@ -15,17 +16,26 @@ export class Nav extends LitElement {
   render() {
     return html`
       <md-navigation-bar hideInactiveLabels>
-        <md-navigation-tab label=${msg('Downloads')}>
+        <md-navigation-tab
+          @click=${async () => await this.router?.goto('/')}
+          label=${msg('Downloads')}
+        >
           <md-icon slot="activeIcon">downloads</md-icon>
           <md-icon slot="inactiveIcon">downloads</md-icon>
         </md-navigation-tab>
-        <md-navigation-tab label=${msg('Settings')}>
+        <md-navigation-tab
+          @click=${async () => await this.router?.goto('/settings')}
+          label=${msg('Settings')}
+        >
           <md-icon slot="activeIcon">settings</md-icon>
           <md-icon slot="inactiveIcon">settings</md-icon>
         </md-navigation-tab>
       </md-navigation-bar>
     `
   }
+
+  @property({ attribute: false })
+  router?: Router
 
   static styles = css`
     md-navigation-bar {

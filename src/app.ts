@@ -14,7 +14,7 @@ export class App extends LitElement {
   render() {
     return html`
       <main>${this.router.outlet()}</main>
-      <a2z-nav></a2z-nav>
+      <a2z-nav .router=${this.router}></a2z-nav>
     `
   }
 
