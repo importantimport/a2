@@ -8,8 +8,10 @@ import '@material/web/navigationtab/navigation-tab'
 import '@material/web/icon/icon'
 
 /**
- * TODO: md-navigation-rail
- * @see {@link https://m3.material.io/components/navigation-rail/overview}
+ * TODO: 
+ * - Inactive outline icon (Material Symbols?)
+ * - Navigation rail
+ *   - @see {@link https://m3.material.io/components/navigation-rail/overview}
  */
 @customElement('a2z-nav')
 export class Nav extends LitElement {
