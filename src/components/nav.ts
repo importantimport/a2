@@ -6,6 +6,10 @@ import '@material/web/navigationbar/navigation-bar'
 import '@material/web/navigationtab/navigation-tab'
 import '@material/web/icon/icon'
 
+/**
+ * TODO: md-navigation-rail
+ * @see {@link https://m3.material.io/components/navigation-rail/overview}
+ */
 @customElement('a2z-nav')
 export class Nav extends LitElement {
   render() {
