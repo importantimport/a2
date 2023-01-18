@@ -8,6 +8,7 @@ specifiers:
   '@material/web': ^1.0.0-pre.1
   '@typescript-eslint/eslint-plugin': ^5.48.1
   '@typescript-eslint/parser': ^5.48.1
+  async-call-rpc: ^6.1.5
   eslint: ^8.32.0
   lit: ^2.4.1
   lit-analyzer: ^1.2.1
@@ -24,6 +25,7 @@ dependencies:
   '@lit-labs/router': 0.1.1
   '@lit/localize': 0.11.4
   '@material/web': 1.0.0-pre.1
+  async-call-rpc: 6.1.5
   lit: 2.6.1
   material-icons: 1.13.1
   urlpattern-polyfill: 6.0.2
@@ -1930,6 +1932,10 @@ packages:
     resolution: {integrity: sha512-Q+JC7Whu8HhmTdBph/Tq59IoRtoy6KAm5zzPv00WdujX82lbAL8K7WVjne7vdCsAmbF4AYaDOPyO3k0kl8qIrw==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /async-call-rpc/6.1.5:
+    resolution: {integrity: sha512-tUkXT0ucF8rNLEWaWLGo08Q9xUCBY7XFQE4UFnjkseU6QSVY5qc3QV11JA8H6yP1ksLFVdyszMSaxr31Z3hbYA==}
+    dev: false
 
   /async/3.2.4:
     resolution: {integrity: sha512-iAB+JbDEGXhyIUavoDl9WP/Jj106Kz9DEn1DPgYw5ruDn0e3Wgi3sKFm55sASdGBNOQB8F59d9qQ7deqrHA8wQ==}
