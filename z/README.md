@@ -1,8 +1,6 @@
 # A2Z [WIP]
 
-A2Z (a.k.a Aria2 Z or A2Z-FE), is an experimental Aria2 frontend.
-
-It is currently not working properly.
+A2Z is an experimental Aria2 frontend, currently not working properly.
 
 <div align="center">
 
