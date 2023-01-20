@@ -1,10 +1,29 @@
 {
   "name": "a2c",
   "version": "0.0.0",
+  "author": "藍+85CD",
+  "license": "WTFPL",
+  "keywords": [
+    "aria2",
+    "aria2c",
+    "jsonrpc",
+    "typescript"
+  ],
+  "description": "Aria2 JSON-RPC client with full type definition.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/importantimport/a2.git",
+    "directory": "c"
+  },
+  "homepage": "https://github.com/importantimport/a2",
+  "bugs": "https://github.com/importantimport/a2/issues",
   "type": "module",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
