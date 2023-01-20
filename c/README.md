@@ -25,8 +25,8 @@ const aria2 = createClient({
 
 aria2.getVersion().then(console.log) // { enabledFeatures: [], version: '1.36.0' }
 
-// const notify = notify(aria2)
-// const [batch, emit, drop] = batch(aria2)
+// const notify = notify(createClient())
+// const [batch, emit, drop] = batch(createClient())
 ```
 
 `createClient` is a wrapper around `AsyncCall`. So of course you can use it directly if you want:
