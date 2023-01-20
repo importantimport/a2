@@ -1,71 +1,4 @@
-type Status = 'active' | 'waiting' | 'paused' | 'error' | 'complete' | 'removed'
-
-type Uri = {
-  status: Status
-  uri: string
-}
-
-type File = {
-  index: number
-  path: string
-  length: number
-  completedLength: number
-  selected: boolean
-  uris: Uri[]
-}
-
-type Peer = {
-  peerId: string
-  ip: string
-  port: number
-  bitfield: string
-  amChoking: boolean
-  peerChoking: boolean
-  downloadSpeed: number
-  uploadSpeed: number
-  seeder: boolean
-}
-
-type Server = {
-  uri: string
-  currentUri: string
-  downloadSpeed: number
-}
-
-type TellStatusResult = {
-  gid: string
-  status: Status
-  totalLength: number
-  completedLength: number
-  uploadLength: number
-  bitfield: number
-  downloadSpeed: unknown
-  uploadSpeed: unknown
-  infoHash: unknown
-  numSeeders: number
-  seeder: boolean
-  pieceLength: number
-  numPieces: number
-  connections: number
-  errorCode: number
-  errorMessage: string
-  followedBy: unknown
-  following: unknown
-  belongsTo: unknown
-  dir: string
-  files: File[]
-  bittorrent: {
-    announceList: string[]
-    comment: unknown
-    creationDate: number
-    mode: 'single' | 'multi'
-    info: {
-      name: string
-    }
-  }
-  verifiedLength: unknown
-  verifyIntegrityPending?: true
-}
+import type { Uri, File, Peer, Server, TellStatusResult } from './types'
 
 /**
  * Aria2 JSON-RPC Methods type definition for Async Call RPC
@@ -180,5 +113,3 @@ export declare class Aria2 {
 
   declare saveSession: () => 'OK'
 }
-
-export default Aria2

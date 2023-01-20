@@ -1,13 +1,13 @@
 import type { EventBasedChannel } from 'async-call-rpc'
 
-export type A2ZChannelOptions = {
+export type A2ChannelOptions = {
   url: string
   secret?: string
 }
 
-export class A2ZChannel extends EventTarget implements EventBasedChannel {
+export class A2Channel extends EventTarget implements EventBasedChannel {
   constructor(
-    private options: A2ZChannelOptions = {
+    private options: A2ChannelOptions = {
       url: 'http://localhost:6800/jsonrpc',
     }
   ) {

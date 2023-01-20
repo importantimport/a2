@@ -1,34 +1,10 @@
 {
-  "name": "a2z",
-  "private": true,
+  "name": "a2-monorepo",
   "version": "0.0.0",
-  "type": "module",
+  "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint 'src/**/*.ts' && lit-analyzer",
-    "format": "eslint 'src/**/*.ts' --fix"
-  },
-  "dependencies": {
-    "@lit-labs/motion": "^1.0.3",
-    "@lit-labs/router": "^0.1.1",
-    "@lit/localize": "^0.11.4",
-    "@material/web": "^1.0.0-pre.1",
-    "async-call-rpc": "^6.1.5",
-    "lit": "^2.4.1",
-    "material-icons": "^1.13.1",
-    "urlpattern-polyfill": "^6.0.2"
-  },
-  "devDependencies": {
-    "@lit/localize-tools": "^0.6.6",
-    "@typescript-eslint/eslint-plugin": "^5.48.1",
-    "@typescript-eslint/parser": "^5.48.1",
-    "eslint": "^8.32.0",
-    "lit-analyzer": "^1.2.1",
-    "rollup-plugin-html-literals": "^1.1.6",
-    "ts-lit-plugin": "^1.2.1",
-    "typescript": "^4.9.3",
-    "vite": "^4.0.0",
-    "vite-plugin-pwa": "^0.14.1"
+    "preinstall": "npx -y only-allow pnpm",
+    "dev": "pnpm -rF a2z dev",
+    "build": "pnpm -r build"
   }
 }
