@@ -7,3 +7,4 @@ export const createClient = (options: A2ChannelOptions) =>
 
 export { A2Channel, type A2ChannelOptions } from './channel'
 export type { Aria2 } from './methods'
+export type { _AsyncVersionOf } from 'async-call-rpc'
