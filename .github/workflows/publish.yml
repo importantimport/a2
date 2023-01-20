@@ -45,9 +45,9 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: pnpm -r -F "./packages/**" build
+        run: pnpm -r build
 
       - name: Publish
-        run: pnpm -r -F "./packages/**" publish --no-git-checks --access public
+        run: pnpm -r publish --no-git-checks --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
