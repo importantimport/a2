@@ -42,6 +42,7 @@ export class Nav extends LitElement {
   static styles = css`
     md-navigation-bar {
       position: fixed;
+      left: 0;
       bottom: 0;
     }
   `
