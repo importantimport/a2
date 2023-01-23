@@ -13,7 +13,7 @@ if (!globalThis.URLPattern) await import('urlpattern-polyfill')
 export class App extends LitElement {
   render() {
     return html`
-      <main>${this.router.outlet()}</main>
+      ${this.router.outlet()}
       <a2z-nav .router=${this.router}></a2z-nav>
     `
   }
