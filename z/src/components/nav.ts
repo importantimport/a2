@@ -8,10 +8,12 @@ import '@material/web/navigationtab/navigation-tab'
 import '@material/web/icon/icon'
 
 /**
- * TODO: 
+ * TODO:
  * - Inactive outline icon (Material Symbols?)
  * - Navigation rail
  *   - @see {@link https://m3.material.io/components/navigation-rail/overview}
+ * - Use href directly instead of dirty onclick
+ *   - @see {@link https://github.com/material-components/material-web/issues/441}
  */
 @customElement('a2z-nav')
 export class Nav extends LitElement {
@@ -19,14 +21,20 @@ export class Nav extends LitElement {
     return html`
       <md-navigation-bar hideInactiveLabels>
         <md-navigation-tab
-          @click=${async () => await this.router?.goto('/')}
+          @click=${async () => {
+            history.pushState({}, '', '/')
+            await this.router?.goto('/')
+          }}
           label=${msg('Downloads')}
         >
           <md-icon slot="activeIcon">downloads</md-icon>
           <md-icon slot="inactiveIcon">downloads</md-icon>
         </md-navigation-tab>
         <md-navigation-tab
-          @click=${async () => await this.router?.goto('/settings')}
+          @click=${async () => {
+            history.pushState({}, '', '/settings/')
+            await this.router?.goto('/settings/')
+          }}
           label=${msg('Settings')}
         >
           <md-icon slot="activeIcon">settings</md-icon>
