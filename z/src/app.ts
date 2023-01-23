@@ -25,10 +25,10 @@ export class App extends LitElement {
         path: '/',
         name: 'Index',
         render: () => html`<a2z-index></a2z-index>`,
-        enter: async () => {
-          await import('./components/index')
-          return true
-        },
+        enter: async () =>
+          await import('./components/index').then((res) =>
+            res ? true : false
+          ),
       },
       {
         path: '/settings',
