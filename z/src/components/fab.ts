@@ -11,8 +11,8 @@ export class Fab extends LitElement {
 
   static styles = css`
     md-fab {
-      --_container-color: var(--md-sys-color-primary-container);
-      --_icon-color: var(--md-sys-color-on-primary-container);
+      --md-fab-container-color: var(--md-sys-color-primary-container);
+      --md-fab-icon-color: var(--md-sys-color-on-primary-container);
       position: fixed;
       z-index: 100;
       bottom: 6em;
