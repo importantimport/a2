@@ -9,11 +9,11 @@ export class SettingsIndex extends LitElement {
   render() {
     return html`
       <md-list>
-        <md-list-item headline="RPC Settings"></md-list-item>
+        <md-list-item headline="RPC Settings" disabled></md-list-item>
         <a href="/settings/a2z">
           <md-list-item headline="A2Z Settings"></md-list-item>
         </a>
-        <md-list-item headline="Aria2 Settings"></md-list-item>
+        <md-list-item headline="Aria2 Settings" disabled></md-list-item>
         <a href="/settings/status">
           <md-list-item
             headline="Status"
