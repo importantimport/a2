@@ -19,7 +19,8 @@
     "useDefineForClassFields": false,
     "skipLibCheck": true,
     "plugins": [{ "name": "ts-lit-plugin" }],
-    "paths": { "~/*": ["src/*"] }
+    "paths": { "~/*": ["src/*"] },
+    "baseUrl": "."
   },
   "include": ["src/**/*.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
