@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { aria2 } from '../../lib/rpc'
+import { aria2 } from '~/lib/rpc'
 
 import '@material/web/list/list'
 import '@material/web/list/list-item'

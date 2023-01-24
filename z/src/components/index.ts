@@ -1,10 +1,10 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { msg, str } from '@lit/localize'
-import litLogo from '../assets/lit.svg'
+import litLogo from '~/assets/lit.svg'
 import '@material/web/button/tonal-button'
-import './fab'
-import { aria2 } from '../lib/rpc'
+import '~/components/fab'
+import { aria2 } from '~/lib/rpc'
 
 const { version } = await aria2.getVersion()
 
