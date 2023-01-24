@@ -2,9 +2,9 @@ import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import { Router } from '@lit-labs/router'
 
-import './components/nav'
+import '~/components/nav'
 
-import './app.css'
+import '~/app.css'
 
 // @ts-ignore: Property 'UrlPattern' does not exist
 if (!globalThis.URLPattern) await import('urlpattern-polyfill')
