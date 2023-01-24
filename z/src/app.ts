@@ -31,9 +31,11 @@ export class App extends LitElement {
           ),
       },
       {
-        path: '/settings',
+        path: '/settings/*',
         name: 'Settings',
-        render: () => html`<h1>Settings</h1>`,
+        render: () => html`<a2z-settings></a2z-settings>`,
+        enter: async () =>
+          await import('./pages/settings').then((res) => (res ? true : false)),
       },
     ],
     {
