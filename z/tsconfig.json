@@ -18,7 +18,8 @@
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": false,
     "skipLibCheck": true,
-    "plugins": [{ "name": "ts-lit-plugin" }]
+    "plugins": [{ "name": "ts-lit-plugin" }],
+    "paths": { "~/*": ["src/*"] }
   },
   "include": ["src/**/*.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
