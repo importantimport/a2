@@ -3,6 +3,7 @@ import type { EventBasedChannel } from 'async-call-rpc'
 export type A2ChannelOptions = {
   url: string
   secret?: string
+  method?: 'POST' | 'GET'
 }
 
 export class A2Channel extends EventTarget implements EventBasedChannel {
@@ -29,7 +30,7 @@ export class A2Channel extends EventTarget implements EventBasedChannel {
     this.dispatchEvent(
       new MessageEvent('message', {
         data: await fetch(this.options.url, {
-          method: 'POST',
+          method: this.options.method ?? 'POST',
           body: JSON.stringify({
             ...data,
             method: `aria2.${data.method}`,
