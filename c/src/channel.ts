@@ -43,7 +43,9 @@ export class A2Channel extends EventTarget implements EventBasedChannel {
             Accept: 'application/json',
             'Content-Type': 'application/json',
           },
-        }).then((res) => res.json()),
+        })
+          .then((res) => res.json())
+          .catch(console.error),
       })
     )
   }
