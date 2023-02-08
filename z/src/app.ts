@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import { Router } from '@lit-labs/router'
 
@@ -13,10 +13,18 @@ if (!globalThis.URLPattern) await import('urlpattern-polyfill')
 export class App extends LitElement {
   render() {
     return html`
-      ${this.router.outlet()}
+      <main>${this.router.outlet()}</main>
       <a2z-nav .router=${this.router}></a2z-nav>
     `
   }
+
+  static styles = css`
+    main {
+      background-color: var(--md-sys-color-background);
+      color: var(--md-sys-color-on-background);
+      min-height: calc(100vh - 80px);
+    }
+  `
 
   private router = new Router(
     this,
