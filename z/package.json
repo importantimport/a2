@@ -18,6 +18,8 @@
     "async-call-rpc": "^6.1.5",
     "lit": "^2.4.1",
     "material-icons": "^1.13.1",
+    "rxdb": "^14.0.0-beta.42",
+    "rxjs": "^8.0.0-alpha.7",
     "urlpattern-polyfill": "^6.0.2"
   },
   "devDependencies": {
