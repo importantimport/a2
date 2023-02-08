@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
 import '@material/web/list/list'
@@ -14,12 +14,6 @@ export class SettingsA2Z extends LitElement {
       </md-list>
     `
   }
-
-  static styles = css`
-    a {
-      text-decoration: none;
-    }
-  `
 }
 
 declare global {
