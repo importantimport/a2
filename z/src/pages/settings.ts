@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import { Router } from '@lit-labs/router'
 
@@ -7,6 +7,7 @@ export class Settings extends LitElement {
   render() {
     return html`${this.router.outlet()} `
   }
+
   private router = new Router(this, [
     {
       path: '/*',
@@ -30,6 +31,13 @@ export class Settings extends LitElement {
         await import('./settings/status').then((res) => (res ? true : false)),
     },
   ])
+
+  static styles = css`
+    :host {
+      --md-list-container-color: var(--md-sys-color-background);
+      --md-list-list-item-container-color: var(--md-sys-color-background);
+    }
+  `
 }
 
 declare global {
