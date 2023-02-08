@@ -27,6 +27,7 @@ importers:
       eslint: ^8.32.0
       lit: ^2.4.1
       lit-analyzer: ^1.2.1
+      lokijs: ^1.5.12
       material-icons: ^1.13.1
       rollup-plugin-html-literals: ^1.1.6
       rxdb: ^14.0.0-beta.42
@@ -45,6 +46,7 @@ importers:
       a2c: link:../c
       async-call-rpc: 6.1.5
       lit: 2.6.1
+      lokijs: 1.5.12
       material-icons: 1.13.1
       rxdb: 14.0.0-beta.42_rxjs@8.0.0-alpha.7
       rxjs: 8.0.0-alpha.7

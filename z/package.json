@@ -17,6 +17,7 @@
     "a2c": "workspace:*",
     "async-call-rpc": "^6.1.5",
     "lit": "^2.4.1",
+    "lokijs": "^1.5.12",
     "material-icons": "^1.13.1",
     "rxdb": "^14.0.0-beta.42",
     "rxjs": "^8.0.0-alpha.7",
