@@ -6,14 +6,28 @@ import '~/components/nav'
 
 import '~/app.css'
 
+import { db } from './lib/database'
+
 // @ts-ignore: Property 'UrlPattern' does not exist
 if (!globalThis.URLPattern) await import('urlpattern-polyfill')
+
+const myDocument = await (
+  await db()
+).test
+  // .insert({
+  .incrementalUpsert({
+    id: 'hello',
+    message: 'Hello, World!',
+  })
 
 @customElement('a2z-app')
 export class App extends LitElement {
   render() {
     return html`
-      <main>${this.router.outlet()}</main>
+      <main>
+        ${myDocument.get('message')}
+        ${this.router.outlet()}
+      </main>
       <a2z-nav .router=${this.router}></a2z-nav>
     `
   }
