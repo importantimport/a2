@@ -37,7 +37,7 @@ const _create = async () => {
   console.log('creating database...')
   const db = await createRxDatabase<MyDatabase>({
     name: 'exampledb',
-    multiInstance: false,
+    // multiInstance: false,
     // ignoreDuplicate: true,
     storage: getRxStorageLoki({
       env: 'BROWSER',
