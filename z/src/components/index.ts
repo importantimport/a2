@@ -1,9 +1,10 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { msg, str } from '@lit/localize'
-import litLogo from '~/assets/lit.svg'
+
 import '@material/web/button/tonal-button'
 import '~/components/fab'
+
 import { aria2 } from '~/lib/rpc'
 
 const { version } = await aria2.getVersion()
@@ -32,7 +33,7 @@ export class Index extends LitElement {
           <img src="/vite.svg" class="logo" alt="Vite logo" />
         </a>
         <a href="https://lit.dev" target="_blank">
-          <img src=${litLogo} class="logo lit" alt="Lit logo" />
+          <img src="/lit.svg" class="logo lit" alt="Lit logo" />
         </a>
       </div>
       <h1>
