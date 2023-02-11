@@ -1,6 +1,9 @@
 import { LitElement, css, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, state } from 'lit/decorators.js'
 import { msg, str } from '@lit/localize'
+
+import { Subject } from 'rxjs'
+import { throttleTime } from 'rxjs/operators'
 
 import '@material/web/button/tonal-button'
 import '~/components/fab'
@@ -11,15 +14,6 @@ const { version } = await aria2.getVersion()
 
 @customElement('a2z-index')
 export class Index extends LitElement {
-  @property({ type: String })
-  name = 'Lit'
-
-  /**
-   * The number of times the button has been clicked.
-   */
-  @property({ type: Number })
-  count = 0
-
   render() {
     return html`
       <div>
@@ -39,7 +33,7 @@ export class Index extends LitElement {
       <div class="card">
         <md-tonal-button
           label="count is ${this.count}"
-          @click=${this._onClick}
+          @click=${() => this.counter$.next(this.count + 1)}
           part="button"
         >
         </md-tonal-button>
@@ -48,9 +42,20 @@ export class Index extends LitElement {
     `
   }
 
-  private _onClick() {
-    this.count++
+  @property({ type: String })
+  name = 'Lit'
+
+  @state()
+  count = 0
+
+  constructor() {
+    super()
+    this.counter$
+      .pipe(throttleTime(1000))
+      .subscribe((count) => (this.count = count))
   }
+
+  private counter$ = new Subject<number>()
 
   static styles = css`
     :host {
