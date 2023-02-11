@@ -15,12 +15,6 @@ export class Index extends LitElement {
   name = 'Lit'
 
   /**
-   * Copy for the read the docs hint.
-   */
-  @property({ type: String })
-  docsHint = 'Click on the Vite and Lit logos to learn more'
-
-  /**
    * The number of times the button has been clicked.
    */
   @property({ type: Number })
@@ -50,7 +44,6 @@ export class Index extends LitElement {
         >
         </md-tonal-button>
       </div>
-      <p class="read-the-docs">${this.docsHint}</p>
       <a2z-fab></a2z-fab>
     `
   }
