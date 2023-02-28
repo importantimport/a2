@@ -35,6 +35,7 @@
     "ts-lit-plugin": "^1.2.1",
     "typescript": "^5.0.0-beta",
     "vite": "^4.0.0",
+    "vite-plugin-civet": "^0.2.5",
     "vite-plugin-pwa": "^0.14.1",
     "vite-tsconfig-paths": "^4.0.5"
   }
