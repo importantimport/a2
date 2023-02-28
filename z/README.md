@@ -25,6 +25,6 @@ pnpm dev
 
 ## TODO
 
-- RxJS
-- RxDB (+ RxStorage LokiJS)
+- Implement most of [yaaw](https://github.com/binux/yaaw)'s features
 - Tauri v2 (+ Mobile)
+- Implement most of [AriaNg](https://github.com/mayswind/AriaNg)'s features
