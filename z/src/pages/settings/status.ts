@@ -5,7 +5,7 @@ import { aria2 } from '~/lib/rpc'
 
 import '@material/web/list/list'
 import '@material/web/list/list-item'
-import '@material/web/list/list-divider'
+import '@material/web/divider/divider'
 
 const { version, enabledFeatures } = await aria2.getVersion()
 
@@ -22,7 +22,7 @@ export class SettingsStatus extends LitElement {
           headline="Version"
           trailingSupportingText=${version}
         ></md-list-item>
-        <md-list-divider></md-list-divider>
+        <md-divider></md-divider>
         <md-list-item supportingText="Enabled features" disabled></md-list-item>
         ${enabledFeatures.map(
           (feature) => html`<md-list-item headline=${feature}></md-list-item>`
