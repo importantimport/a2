@@ -21,6 +21,9 @@ importers:
       '@lit-labs/router':
         specifier: ^0.1.1
         version: 0.1.1
+      '@lit-labs/task':
+        specifier: ^2.1.0
+        version: 2.1.0
       '@lit/localize':
         specifier: ^0.11.4
         version: 0.11.4
@@ -2190,6 +2193,12 @@ packages:
 
   /@lit-labs/ssr-dom-shim@1.1.0:
     resolution: {integrity: sha512-92uQ5ARf7UXYrzaFcAX3T2rTvaS9Z1//ukV+DqjACM4c8s0ZBQd7ayJU5Dh2AFLD/Ayuyz4uMmxQec8q3U4Ong==}
+
+  /@lit-labs/task@2.1.0:
+    resolution: {integrity: sha512-T22/3sFQEpOTXlO4Bjpn4oOH/1duhRzbO6rV+eZ1zwr3eqpH8Qmy1H4I8LDfGOHc/GOeFnde2U1Xvji0pxIZeQ==}
+    dependencies:
+      '@lit/reactive-element': 1.6.1
+    dev: false
 
   /@lit/localize-tools@0.6.8:
     resolution: {integrity: sha512-JX2s5TSbXlCNDXABbfc4nHJDj/zJuwLOdCw4/IBm76hKIwWUoxruKkO7imFftcK1yOr1llKveYcfrmyzazC3jQ==}
