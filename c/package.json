@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "async-call-rpc": "^6.1.5",
-    "unbuild": "^1.1.1"
+    "unbuild": "^1.2.1"
   },
   "peerDependencies": {
     "async-call-rpc": "^6.1.5"
