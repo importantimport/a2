@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
+import { Task } from '@lit-labs/task'
 
 import '@material/web/list/list'
 import '@material/web/list/list-item'
@@ -24,12 +25,16 @@ export class SettingsA2Z extends LitElement {
           </md-filled-select> -->
         </md-list-item>
         <md-list-item headline="Theme Color">
-          <input
-            type="color"
-            value="#6750a4"
-            slot="end"
-            @change=${this.themeColorChange}
-          />
+          ${this._getThemeColor.render({
+            complete: (value) => html`
+              <input
+                type="color"
+                value=${value ?? '#6750a4'}
+                slot="end"
+                @change=${this.themeColorChange}
+              />
+            `,
+          })}
         </md-list-item>
         <md-list-item headline="Dark Mode">
           <!-- <md-filled-select slot="end">
@@ -42,7 +47,17 @@ export class SettingsA2Z extends LitElement {
     `
   }
 
-  themeColorChange({ target: { value } }: { target: HTMLInputElement }) {
+  private _getThemeColor = new Task(
+    this,
+    () =>
+      database.settings
+        .findOne({ selector: { key: 'theme-color' } })
+        .exec()
+        .then((res) => res?.value),
+    () => []
+  )
+
+  private themeColorChange({ target: { value } }: { target: HTMLInputElement }) {
     database.settings.incrementalUpsert({
       updatedAt: new Date().getTime(),
       key: 'theme-color',
