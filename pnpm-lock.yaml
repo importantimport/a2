@@ -24,6 +24,9 @@ importers:
       '@lit/localize':
         specifier: ^0.11.4
         version: 0.11.4
+      '@material/material-color-utilities':
+        specifier: ^0.2.5
+        version: 0.2.5
       '@material/web':
         specifier: 1.0.0-pre.6
         version: 1.0.0-pre.6
@@ -2214,6 +2217,10 @@ packages:
     resolution: {integrity: sha512-va15kYZr7KZNNPZdxONGQzpUr+4sxVu7V/VG7a8mRfPPXUyhEYj5RzXCQmGrlP3tAh0L3HHm5AjBMFYRqlM9SA==}
     dependencies:
       '@lit-labs/ssr-dom-shim': 1.1.0
+
+  /@material/material-color-utilities@0.2.5:
+    resolution: {integrity: sha512-u08mIIzSHySU8lbxKbBFqNuEf6HpFv9VUrxTcKNcip3bEvWEpLeE6JTtgxMcz+sUqHcykT0jIzzskoYAlgKVEw==}
+    dev: false
 
   /@material/web@1.0.0-pre.6:
     resolution: {integrity: sha512-85tAr793HCp9ObwcZ7TPoAblOjSSAYov5Fx7RLE/uzq9eSsBrZI4L8BX4oobJOikp3hV47acOsK5+STgnHi3yw==}
