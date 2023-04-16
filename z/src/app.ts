@@ -24,21 +24,10 @@ const myDocument = await (
 export class App extends LitElement {
   render() {
     return html`
-      <main>
-        ${myDocument.get('message')}
-        ${this.router.outlet()}
-      </main>
+      ${this.router.outlet()}
       <a2z-nav .router=${this.router}></a2z-nav>
     `
   }
-
-  static styles = css`
-    main {
-      background-color: var(--md-sys-color-background);
-      color: var(--md-sys-color-on-background);
-      min-height: calc(100vh - 80px);
-    }
-  `
 
   private router = new Router(
     this,
