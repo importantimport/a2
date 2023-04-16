@@ -24,8 +24,7 @@
     "lokijs": "^1.5.12",
     "material-symbols": "^0.5.5",
     "rxdb": "^14.8.2",
-    "rxjs": "8.0.0-alpha.8",
-    "urlpattern-polyfill": "^6.0.2"
+    "rxjs": "8.0.0-alpha.8"
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",

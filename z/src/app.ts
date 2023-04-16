@@ -10,10 +10,6 @@ import '~/app.css'
 import { db } from '~/lib/database'
 import { applyTheme } from '~/lib/utils/apply-theme'
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore: Property 'UrlPattern' does not exist
-if (!globalThis.URLPattern) await import('urlpattern-polyfill')
-
 const database = await db()
 
 @customElement('a2z-app')
