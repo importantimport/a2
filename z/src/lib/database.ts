@@ -12,12 +12,14 @@ import IncrementalIndexedDBAdapter from 'lokijs/src/incremental-indexeddb-adapte
 
 import { type SchemaType, schema } from '~/lib/schema'
 
+import { type Setting, settingSchema } from '~/lib/schemas/settings'
+
 /**
  * Polyfill the `global` variable
  * @see {@link https://rxdb.info/install.html#polyfill-the-global-variable}
  */
-;globalThis.global = globalThis
-;globalThis.process = {
+globalThis.global = globalThis
+globalThis.process = {
   ...globalThis.process,
   env: { DEBUG: undefined },
 }
@@ -29,7 +31,10 @@ if (import.meta.env.DEV)
 
 addRxPlugin(RxDBLeaderElectionPlugin)
 
-type MyDatabase = RxDatabase<{ test: RxCollection<SchemaType> }>
+type MyDatabase = RxDatabase<{
+  test: RxCollection<SchemaType>
+  settings: RxCollection<Setting>
+}>
 
 let promise: Promise<MyDatabase>
 
@@ -53,7 +58,10 @@ const _create = async () => {
     globalThis.document.title = '♛ ' + globalThis.document.title
   })
   console.log('create collections')
-  await db.addCollections({ test: { schema } })
+  await db.addCollections({
+    test: { schema },
+    settings: { schema: settingSchema },
+  })
   return db
 }
 
