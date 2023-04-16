@@ -32,11 +32,10 @@ export class App extends LitElement {
 
   async _applyTheme() {
     applyTheme(
-      (
-        await database.settings
-          .findOne({ selector: { key: 'theme-color' } })
-          .exec()
-      )?.value
+      await database.settings
+        .findOne({ selector: { key: 'theme-color' } })
+        .exec()
+        .then((res) => res?.value)
     )
   }
 
