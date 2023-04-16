@@ -1,8 +1,9 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
 import '@material/web/list/list'
 import '@material/web/list/list-item'
+import '@material/web/list/list-item-link'
 
 @customElement('a2z-settings-index')
 export class SettingsIndex extends LitElement {
@@ -10,25 +11,19 @@ export class SettingsIndex extends LitElement {
     return html`
       <md-list>
         <md-list-item headline="RPC Settings" disabled></md-list-item>
-        <a href="/settings/a2z">
-          <md-list-item headline="A2Z Settings"></md-list-item>
-        </a>
+        <md-list-item-link
+          headline="A2Z Settings"
+          href="/settings/a2z"
+        ></md-list-item-link>
         <md-list-item headline="Aria2 Settings" disabled></md-list-item>
-        <a href="/settings/status">
-          <md-list-item
-            headline="Status"
-            supportingText="click here!"
-          ></md-list-item
-        ></a>
+        <md-list-item-link
+          headline="Status"
+          supportingText="click here!"
+          href="/settings/status"
+        ></md-list-item-link>
       </md-list>
     `
   }
-
-  static styles = css`
-    a {
-      text-decoration: none;
-    }
-  `
 }
 
 declare global {
