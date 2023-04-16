@@ -1,4 +1,5 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, html } from 'lit'
+import { until } from 'lit/directives/until.js'
 import { customElement } from 'lit/decorators.js'
 import { Router } from '@lit-labs/router'
 
@@ -6,19 +7,14 @@ import '~/components/nav'
 
 import '~/app.css'
 
-import { db } from './lib/database'
+import { db } from '~/lib/database'
+import { applyTheme } from '~/lib/utils/apply-theme'
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: Property 'UrlPattern' does not exist
 if (!globalThis.URLPattern) await import('urlpattern-polyfill')
 
-const myDocument = await (
-  await db()
-).test
-  // .insert({
-  .incrementalUpsert({
-    id: 'hello',
-    message: 'Hello, World!',
-  })
+const database = await db()
 
 @customElement('a2z-app')
 export class App extends LitElement {
@@ -27,6 +23,21 @@ export class App extends LitElement {
       ${this.router.outlet()}
       <a2z-nav .router=${this.router}></a2z-nav>
     `
+  }
+
+  connectedCallback() {
+    super.connectedCallback()
+    until(this._applyTheme(), 'Loading...')
+  }
+
+  async _applyTheme() {
+    applyTheme(
+      (
+        await database.settings
+          .findOne({ selector: { key: 'theme-color' } })
+          .exec()
+      )?.value
+    )
   }
 
   private router = new Router(

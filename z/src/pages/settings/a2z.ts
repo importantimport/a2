@@ -7,6 +7,9 @@ import '@material/web/list/list-item'
 // import '@material/web/select/select-option'
 
 import { db } from '~/lib/database'
+import { applyTheme } from '~/lib/utils/apply-theme'
+
+const database = await db()
 
 @customElement('a2z-settings-a2z')
 export class SettingsA2Z extends LitElement {
@@ -39,12 +42,13 @@ export class SettingsA2Z extends LitElement {
     `
   }
 
-  async themeColorChange({ target: { value } }: { target: HTMLInputElement }) {
-    (await db()).settings.incrementalUpsert({
+  themeColorChange({ target: { value } }: { target: HTMLInputElement }) {
+    database.settings.incrementalUpsert({
       updatedAt: new Date().getTime(),
       key: 'theme-color',
       value,
     })
+    applyTheme(value)
     if (import.meta.env.DEV) console.log(value)
   }
 }
