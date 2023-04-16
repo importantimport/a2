@@ -27,8 +27,8 @@ export class Nav extends LitElement {
           }}
           label=${msg('Downloads')}
         >
-          <md-icon slot="activeIcon">downloads</md-icon>
-          <md-icon slot="inactiveIcon">downloads</md-icon>
+          <md-icon slot="activeIcon">download</md-icon>
+          <md-icon slot="inactiveIcon">download</md-icon>
         </md-navigation-tab>
         <md-navigation-tab
           @click=${async () => {
