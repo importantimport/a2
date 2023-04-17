@@ -1,5 +1,4 @@
 import {
-  type RxCollection,
   type RxDatabase,
   addRxPlugin,
   createRxDatabase,
@@ -9,8 +8,6 @@ import { getRxStorageLoki } from 'rxdb/plugins/storage-lokijs'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore Could not find a declaration file for module 'lokijs/src/incremental-indexeddb-adapter'.
 import IncrementalIndexedDBAdapter from 'lokijs/src/incremental-indexeddb-adapter'
-
-import { type SchemaType, schema } from '~/lib/schema'
 
 import { type SettingsCollection, settingsSchema } from '~/lib/schemas/settings'
 
@@ -32,7 +29,6 @@ if (import.meta.env.DEV)
 addRxPlugin(RxDBLeaderElectionPlugin)
 
 type MyDatabase = RxDatabase<{
-  test: RxCollection<SchemaType>
   settings: SettingsCollection
 }>
 
@@ -59,7 +55,6 @@ const _create = async () => {
   })
   console.log('create collections')
   await db.addCollections({
-    test: { schema },
     settings: { schema: settingsSchema },
   })
   return db
