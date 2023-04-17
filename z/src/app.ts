@@ -1,7 +1,8 @@
 import { LitElement, html } from 'lit'
 import { until } from 'lit/directives/until.js'
-import { customElement } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
 import { Router } from '@lit-labs/router'
+import { createHead } from 'unhead'
 
 import '~/components/nav'
 
@@ -20,6 +21,9 @@ export class App extends LitElement {
       <a2z-nav .router=${this.router}></a2z-nav>
     `
   }
+
+  @property({ attribute: false })
+  head: unknown = createHead()
 
   connectedCallback() {
     super.connectedCallback()

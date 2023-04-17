@@ -1,6 +1,7 @@
 import { defineConfig, mergeConfig } from 'vite'
 // import babelPlugin from 'vite-plugin-babel'
 // import civetPlugin from 'vite-plugin-civet'
+import UnheadVite from '@unhead/addons/vite'
 import template from 'rollup-plugin-html-literals'
 import { VitePWA } from 'vite-plugin-pwa'
 import tsconfigPaths from 'vite-tsconfig-paths'
@@ -32,6 +33,7 @@ export const baseConfig = defineConfig({
     //   outputExtension: 'js',
     //   outputTransformerPlugin: { serve: 'babel-plugin' },
     // }),
+    UnheadVite(),
     template(),
     tsconfigPaths(),
   ],
