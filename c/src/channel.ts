@@ -2,6 +2,7 @@ import type { EventBasedChannel } from 'async-call-rpc'
 
 export type A2ChannelOptions = {
   url: string
+  user?: string
   secret?: string
   method?: 'POST' | 'GET'
 }
@@ -35,7 +36,12 @@ export class A2Channel extends EventTarget implements EventBasedChannel {
             ...data,
             method: `aria2.${data.method}`,
             params: [
-              ...(this.options.secret ? [`token:${this.options.secret}`] : []),
+              ...(this.options.secret ? [
+                [
+                  this.options.user ?? 'token',
+                  this.options.secret
+                ].join(':')
+              ] : []),
               ...data.params,
             ],
           }),

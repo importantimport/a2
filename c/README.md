@@ -45,3 +45,15 @@ const aria2 = AsyncCall<Aria2>(
   }
 )
 ```
+
+If you use user/passwd instead of secret:
+
+```ts
+import { createClient } from 'a2c'
+
+const aria2 = createClient({
+  url: 'http://localhost:6800/jsonrpc', // defaultValue
+  user: 'username', // --rpc-user
+  secret: 'password' // --rpc-passwd
+})
+```
