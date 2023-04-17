@@ -1,13 +1,15 @@
-import type { RxJsonSchema } from 'rxdb'
+import type { RxJsonSchema, RxCollection } from 'rxdb'
 
-export type Setting = {
+export type Settings = {
   createdAt: number
   updatedAt: number
   key: string
   value: string
 }
 
-export const settingSchema: RxJsonSchema<Setting> = {
+export type SettingsCollection = RxCollection<Settings>
+
+export const settingsSchema: RxJsonSchema<Settings> = {
   title: 'Settings',
   description: 'Settings',
   version: 0,
