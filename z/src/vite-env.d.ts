@@ -8,4 +8,5 @@ interface ImportMeta {
 interface ImportMetaEnv extends Readonly<Record<string, string>> {
   readonly A2Z_RPC_URL?: string
   readonly A2Z_RPC_SECRET?: string
+  readonly A2Z_THEME_COLOR?: string
 }
