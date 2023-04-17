@@ -28,16 +28,16 @@ if (import.meta.env.DEV)
 
 addRxPlugin(RxDBLeaderElectionPlugin)
 
-type MyDatabase = RxDatabase<{
+type A2ZDatabase = RxDatabase<{
   settings: SettingsCollection
 }>
 
-let promise: Promise<MyDatabase>
+let promise: Promise<A2ZDatabase>
 
 const _create = async () => {
   console.log('creating database...')
-  const db = await createRxDatabase<MyDatabase>({
-    name: 'exampledb',
+  const db = await createRxDatabase<A2ZDatabase>({
+    name: 'a2z',
     // multiInstance: false,
     // ignoreDuplicate: true,
     storage: getRxStorageLoki({
