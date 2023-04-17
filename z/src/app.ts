@@ -10,6 +10,7 @@ import '~/app.css'
 
 import { db } from '~/lib/database'
 import { applyTheme } from '~/lib/utils/apply-theme'
+import { applyLocale } from './lib/utils/locales'
 
 const database = await db()
 
@@ -27,7 +28,8 @@ export class App extends LitElement {
 
   connectedCallback() {
     super.connectedCallback()
-    until(this._applyTheme(), 'Loading...')
+    until(this._applyTheme())
+    until(this._applyLocale())
   }
 
   async _applyTheme() {
@@ -37,6 +39,14 @@ export class App extends LitElement {
         .exec()
         .then((res) => res?.value)
     )
+  }
+
+  async _applyLocale() {
+    const locale = await database.settings
+      .findOne({ selector: { key: 'language' } })
+      .exec()
+      .then((res) => res?.value)
+    if (locale) applyLocale(locale)
   }
 
   private router = new Router(

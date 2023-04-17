@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<file target-language="ja_JP" source-language="en" original="lit-localize-inputs" datatype="plaintext">
+<body>
+<trans-unit id="s175d37c8eb04d73e">
+  <source>Downloads</source>
+</trans-unit>
+<trans-unit id="s9d8b8aa2b404c2c8">
+  <source>Settings</source>
+</trans-unit>
+<trans-unit id="s1cf0bcc6d4c4670c">
+  <source>Vite + <x id="0" equiv-text="${this.name}"/></source>
+  <note from="lit-localize">Vite + Lit</note>
+</trans-unit>
+</body>
+</file>
+</xliff>
