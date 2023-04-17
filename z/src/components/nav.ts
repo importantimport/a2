@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { msg } from '@lit/localize'
+import { localized, msg } from '@lit/localize'
 import type { Router } from '@lit-labs/router'
 
 import '@material/web/navigationbar/navigation-bar'
@@ -14,7 +14,9 @@ import '@material/web/icon/icon'
  *   - @see {@link https://m3.material.io/components/navigation-rail/overview}
  * - Use href directly instead of dirty onclick
  *   - @see {@link https://github.com/material-components/material-web/issues/441}
+ * - activeIndex
  */
+@localized()
 @customElement('a2z-nav')
 export class Nav extends LitElement {
   render() {
