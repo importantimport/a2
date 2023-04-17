@@ -4,6 +4,7 @@ import { Task } from '@lit-labs/task'
 
 import '@material/web/list/list'
 import '@material/web/list/list-item'
+import '~/components/locale-picker'
 // import '@material/web/select/filled-select'
 // import '@material/web/select/select-option'
 
@@ -18,11 +19,7 @@ export class SettingsA2Z extends LitElement {
     return html`
       <md-list>
         <md-list-item headline="Languages">
-          <!-- <md-filled-select slot="end">
-            <md-select-option value="english" selected>English</md-select-option>
-            <md-select-option value="japanese">Japanese</md-select-option>
-            <md-select-option value="chinese">Chinese</md-select-option>
-          </md-filled-select> -->
+          <a2z-locale-picker slot="end"></a2z-locale-picker>
         </md-list-item>
         <md-list-item headline="Theme Color">
           ${this._getThemeColor.render({
@@ -57,7 +54,11 @@ export class SettingsA2Z extends LitElement {
     () => []
   )
 
-  private themeColorChange({ target: { value } }: { target: HTMLInputElement }) {
+  themeColorChange({
+    target: { value },
+  }: {
+    target: HTMLInputElement
+  }) {
     database.settings.incrementalUpsert({
       updatedAt: new Date().getTime(),
       key: 'theme-color',
