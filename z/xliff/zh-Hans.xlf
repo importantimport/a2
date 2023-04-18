@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<file target-language="zh-Hans" source-language="en" original="lit-localize-inputs" datatype="plaintext">
+<body>
+<trans-unit id="s175d37c8eb04d73e">
+  <source>Downloads</source>
+  <target state="translated">下载</target>
+</trans-unit>
+<trans-unit id="s9d8b8aa2b404c2c8">
+  <source>Settings</source>
+  <target state="translated">设置</target>
+</trans-unit>
+<trans-unit id="s1cf0bcc6d4c4670c">
+  <source>Vite + <x id="0" equiv-text="${this.name}"/></source>
+  <note from="lit-localize">Vite + Lit</note>
+</trans-unit>
+<trans-unit id="s5d74effc89d08c01">
+  <source>RPC Settings</source>
+  <target state="translated">RPC 设置</target>
+</trans-unit>
+<trans-unit id="sb88788fd5ccf584d">
+  <source>A2Z Settings</source>
+  <target state="translated">A2Z 设置</target>
+</trans-unit>
+<trans-unit id="s578a6e9bd0f81edf">
+  <source>Aria2 Settings</source>
+  <target state="translated">Aria2 设置</target>
+</trans-unit>
+<trans-unit id="sad3e3c8146fc920f">
+  <source>Status</source>
+  <target state="translated">状态</target>
+</trans-unit>
+</body>
+</file>
+</xliff>

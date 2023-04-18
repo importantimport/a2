@@ -11,9 +11,9 @@ const localeNames: {
   [L in typeof allLocales[number]]: string
 } = {
   en: 'English',
-  zh_CN: '简体中文',
-  zh_TW: '正體中文',
-  ja_JP: '日本语',
+  'ja-JP': '日本語',
+  'zh-Hans': '简体中文',
+  'zh-Hant': '正體中文',
 }
 
 const database = await db()
