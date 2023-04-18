@@ -14,7 +14,7 @@ export const applyLocale = async (locale: string) => {
   await setLocale(locale)
   useHead({
     htmlAttrs: {
-      lang: locale
+      lang: locale.replaceAll('_', '-')
     }
   })
 }
