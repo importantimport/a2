@@ -17,7 +17,6 @@ const localeNames: {
 }
 
 const database = await db()
-console.log(getLocale())
 
 @localized()
 @customElement('a2z-locale-picker')
@@ -28,7 +27,7 @@ export class LocalePicker extends LitElement {
         ${allLocales.map(
           (locale) => html`
             <option value=${locale} ?selected=${locale === getLocale()}>
-              ${localeNames[locale]}
+              ${localeNames[locale]} (${locale})
             </option>
           `
         )}
