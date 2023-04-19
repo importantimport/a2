@@ -44,7 +44,7 @@ export type TellStatusResult = {
   totalLength: number
   completedLength: number
   uploadLength: number
-  bitfield: number
+  bitfield: string
   downloadSpeed: unknown
   uploadSpeed: unknown
   infoHash: unknown
