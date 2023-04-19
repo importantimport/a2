@@ -7,6 +7,12 @@ import { applyLocale, getLocale } from '~/lib/utils/locales'
 
 import { db } from '~/lib/database'
 
+// import '@material/web/select/filled-select'
+// import '@material/web/select/select-option'
+// <md-filled-select slot="end">
+//   <md-select-option value="device" selected>devices</md-select-option>
+// </md-filled-select> 
+
 const localeNames: {
   [L in typeof allLocales[number]]: string
 } = {

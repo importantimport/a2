@@ -2,11 +2,12 @@ import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import { Task } from '@lit-labs/task'
 
+import '@material/web/icon/icon'
 import '@material/web/list/list'
 import '@material/web/list/list-item'
+import '@material/web/segmentedbutton/outlined-segmented-button'
+import '@material/web/segmentedbuttonset/outlined-segmented-button-set'
 import '~/components/locale-picker'
-// import '@material/web/select/filled-select'
-// import '@material/web/select/select-option'
 
 import { db } from '~/lib/database'
 import { applyTheme } from '~/lib/utils/apply-theme'
@@ -34,11 +35,17 @@ export class SettingsA2Z extends LitElement {
           })}
         </md-list-item>
         <md-list-item headline="Dark Mode">
-          <!-- <md-filled-select slot="end">
-            <md-select-option value="device" selected>devices</md-select-option>
-            <md-select-option value="light">wb_sunny</md-select-option>
-            <md-select-option value="dark">nightlight</md-select-option>
-          </md-filled-select> -->
+          <md-outlined-segmented-button-set slot="end">
+            <md-outlined-segmented-button label="System">
+              <md-icon slot="icon">devices</md-icon>
+            </md-outlined-segmented-button>
+            <md-outlined-segmented-button label="Light">
+              <md-icon slot="icon">light_mode</md-icon>
+            </md-outlined-segmented-button>
+            <md-outlined-segmented-button label="Dark">
+              <md-icon slot="icon">dark_mode</md-icon>
+            </md-outlined-segmented-button>
+          </md-outlined-segmented-button-set>
         </md-list-item>
       </md-list>
     `
@@ -54,11 +61,7 @@ export class SettingsA2Z extends LitElement {
     () => []
   )
 
-  themeColorChange({
-    target: { value },
-  }: {
-    target: HTMLInputElement
-  }) {
+  themeColorChange({ target: { value } }: { target: HTMLInputElement }) {
     database.settings.incrementalUpsert({
       updatedAt: new Date().getTime(),
       key: 'theme-color',
