@@ -33,6 +33,12 @@ export class Nav extends LitElement {
           <md-icon slot="inactiveIcon">download</md-icon>
         </md-navigation-tab>
         <md-navigation-tab
+          label="History"
+        >
+          <md-icon slot="activeIcon">history</md-icon>
+          <md-icon slot="inactiveIcon">history</md-icon>
+        </md-navigation-tab>
+        <md-navigation-tab
           @click=${async () => {
             history.pushState({}, '', '/settings/')
             await this.router?.goto('/settings/')
