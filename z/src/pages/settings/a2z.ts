@@ -1,13 +1,17 @@
-import { LitElement, html } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import { Task } from '@lit-labs/task'
 
+// import '@material/web/divider/divider'
 import '@material/web/icon/icon'
 import '@material/web/list/list'
 import '@material/web/list/list-item'
 import '@material/web/segmentedbutton/outlined-segmented-button'
 import '@material/web/segmentedbuttonset/outlined-segmented-button-set'
+import '@material/web/slider/slider'
+import '@material/web/switch/switch'
 import '~/pages/settings/a2z/locale-picker'
+import '~/pages/settings/a2z/theme-scheme-picker'
 
 import { db } from '~/lib/database'
 import { applyTheme } from '~/lib/utils/apply-theme'
@@ -20,9 +24,11 @@ export class SettingsA2Z extends LitElement {
     return html`
       <md-list>
         <md-list-item headline="Languages">
+          <md-icon data-variant="icon" slot="start">language</md-icon>
           <a2z-locale-picker slot="end"></a2z-locale-picker>
         </md-list-item>
         <md-list-item headline="Theme Color">
+          <md-icon data-variant="icon" slot="start">palette</md-icon>
           ${this._getThemeColor.render({
             complete: (value) => html`
               <input
@@ -34,19 +40,22 @@ export class SettingsA2Z extends LitElement {
             `,
           })}
         </md-list-item>
-        <md-list-item headline="Dark Mode">
-          <md-outlined-segmented-button-set slot="end">
-            <md-outlined-segmented-button label="System">
-              <md-icon slot="icon">devices</md-icon>
-            </md-outlined-segmented-button>
-            <md-outlined-segmented-button label="Light">
-              <md-icon slot="icon">light_mode</md-icon>
-            </md-outlined-segmented-button>
-            <md-outlined-segmented-button label="Dark">
-              <md-icon slot="icon">dark_mode</md-icon>
-            </md-outlined-segmented-button>
-          </md-outlined-segmented-button-set>
+        <md-list-item headline="Theme Scheme">
+          <md-icon data-variant="icon" slot="start">auto_mode</md-icon>
+          <a2z-theme-scheme-picker slot="end"></a2z-theme-scheme-picker>
         </md-list-item>
+        <md-list-item headline="Auto Refresh">
+          <md-icon data-variant="icon" slot="start">autorenew</md-icon>
+          <div slot="end">
+            <md-switch></md-switch>
+            <!-- <md-divider></md-divider> -->
+            <md-slider
+              min="1"
+              max="61"
+              step="5"
+              withLabel="true">
+            </md-slider>
+          </div>
       </md-list>
     `
   }
@@ -70,6 +79,14 @@ export class SettingsA2Z extends LitElement {
     applyTheme(value)
     if (import.meta.env.DEV) console.log(value)
   }
+
+  static styles = css`
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  `
 }
 
 declare global {
