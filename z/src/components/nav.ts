@@ -56,6 +56,10 @@ export class Nav extends LitElement {
       left: 0;
       bottom: 0;
     }
+
+    md-icon[slot="activeIcon"] {
+      --md-icon-font-variation-settings: 'FILL' 1;
+    }
   `
 }
 
