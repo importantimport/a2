@@ -3,14 +3,13 @@ import { until } from 'lit/directives/until.js'
 import { customElement, property } from 'lit/decorators.js'
 import { Router } from '@lit-labs/router'
 import { createHead } from 'unhead'
+import { db } from '~/lib/database'
+import { applyTheme } from '~/lib/utils/apply-theme'
+import { applyLocale } from './lib/utils/locales'
 
 import '~/components/nav'
 
 import '~/app.css'
-
-import { db } from '~/lib/database'
-import { applyTheme } from '~/lib/utils/apply-theme'
-import { applyLocale } from './lib/utils/locales'
 
 const database = await db()
 
@@ -55,9 +54,9 @@ export class App extends LitElement {
       {
         path: '/',
         name: 'Index',
-        render: () => html`<a2z-index></a2z-index>`,
+        render: () => html`<a2z-downloads></a2z-downloads>`,
         enter: async () =>
-          await import('./components/index').then((res) =>
+          await import('./pages/index').then((res) =>
             res ? true : false
           ),
       },
