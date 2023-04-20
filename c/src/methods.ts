@@ -57,15 +57,15 @@ export declare class Aria2 {
     servers: Server[]
   }
 
-  declare tellActive: (keys?: string[]) => Partial<TellStatusResult>[]
+  declare tellActive: (keys?: string[]) => TellStatusResult[]
 
   declare tellWaiting: (
     offset: number,
     num: number,
     keys?: string[]
-  ) => Partial<TellStatusResult>[]
+  ) => TellStatusResult[]
 
-  declare tellStopped: (keys?: string[]) => Partial<TellStatusResult>[]
+  declare tellStopped: (keys?: string[]) => TellStatusResult[]
 
   declare changePosition: (
     gid: string,

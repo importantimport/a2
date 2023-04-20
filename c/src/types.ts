@@ -47,20 +47,20 @@ export type TellStatusResult = {
   bitfield: string
   downloadSpeed: unknown
   uploadSpeed: unknown
-  infoHash: unknown
-  numSeeders: number
-  seeder: boolean
+  infoHash?: unknown
+  numSeeders?: number
+  seeder?: boolean
   pieceLength: number
   numPieces: number
   connections: number
-  errorCode: number
-  errorMessage: string
-  followedBy: unknown
-  following: unknown
-  belongsTo: unknown
+  errorCode?: number
+  errorMessage?: string
+  followedBy?: unknown
+  following?: unknown
+  belongsTo?: unknown
   dir: string
   files: File[]
-  bittorrent: {
+  bittorrent?: {
     announceList: string[]
     comment: unknown
     creationDate: number
@@ -69,6 +69,6 @@ export type TellStatusResult = {
       name: string
     }
   }
-  verifiedLength: unknown
+  verifiedLength?: unknown
   verifyIntegrityPending?: true
 }
