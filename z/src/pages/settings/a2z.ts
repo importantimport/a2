@@ -7,7 +7,7 @@ import '@material/web/list/list'
 import '@material/web/list/list-item'
 import '@material/web/segmentedbutton/outlined-segmented-button'
 import '@material/web/segmentedbuttonset/outlined-segmented-button-set'
-import '~/components/locale-picker'
+import '~/pages/settings/a2z/locale-picker'
 
 import { db } from '~/lib/database'
 import { applyTheme } from '~/lib/utils/apply-theme'
