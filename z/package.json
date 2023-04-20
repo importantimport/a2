@@ -21,6 +21,7 @@
     "a2c": "workspace:*",
     "async-call-rpc": "^6.1.5",
     "broadcast-channel": "^4.20.2",
+    "filesize": "^10.0.7",
     "lit": "^2.7.2",
     "lokijs": "^1.5.12",
     "material-symbols": "^0.5.5",
