@@ -7,7 +7,15 @@ export type A2ChannelOptions = {
   method?: 'POST' | 'GET'
 }
 
-export class A2Channel extends EventTarget implements EventBasedChannel {
+export type Data = {
+  id: string
+  jsonrpc: '2.0'
+  method?: string
+  params?: unknown[]
+  result?: unknown
+}
+
+export class A2Channel extends EventTarget implements EventBasedChannel<Data> {
   constructor(
     private options: A2ChannelOptions = {
       url: 'http://localhost:6800/jsonrpc',
@@ -16,18 +24,13 @@ export class A2Channel extends EventTarget implements EventBasedChannel {
     super()
   }
 
-  on(listener: (data: unknown) => void) {
-    const callback = (e: Event): void => listener((e as MessageEvent).data)
+  on(listener: (data: Data) => void) {
+    const callback = ({ data }: MessageEvent<Data>) => listener(data)
     this.addEventListener('message', callback)
     return () => this.removeEventListener('message', callback)
   }
 
-  async send(data: {
-    id: string
-    jsonrpc: '2.0'
-    method: string
-    params: unknown[]
-  }): Promise<void> {
+  async send(data: Data): Promise<void> {
     this.dispatchEvent(
       new MessageEvent('message', {
         data: await fetch(this.options.url, {
@@ -35,18 +38,21 @@ export class A2Channel extends EventTarget implements EventBasedChannel {
           body: JSON.stringify({
             ...data,
             method: [
-              ['multicall', 'listMethods', 'listNotifications'].includes(data.method)
+              ['multicall', 'listMethods', 'listNotifications'].includes(
+                data.method
+              )
                 ? 'system'
                 : 'aria2',
-              data.method
+              data.method,
             ].join('.'),
             params: [
-              ...(this.options.secret ? [
-                [
-                  this.options.user ?? 'token',
-                  this.options.secret
-                ].join(':')
-              ] : []),
+              ...(this.options.secret
+                ? [
+                    [this.options.user ?? 'token', this.options.secret].join(
+                      ':'
+                    ),
+                  ]
+                : []),
               ...data.params,
             ],
           }),
