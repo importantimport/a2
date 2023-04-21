@@ -114,20 +114,20 @@ export declare class Aria2 extends Aria2System {
   declare saveSession: () => 'OK'
 }
 
+type Aria2Methods = keyof Omit<
+  Aria2,
+  'multicall' | 'listMethods' | 'listNotifications'
+>
+
 declare class Aria2System {
-  declare multicall: <
-    T extends keyof Omit<
-      Aria2,
-      'multicall' | 'listMethods' | 'listNotifications'
-    > = keyof Omit<Aria2, 'multicall' | 'listMethods' | 'listNotifications'>
-  >(
+  declare multicall: <T extends Aria2Methods = Aria2Methods>(
     methods: {
       methodName: `aria2.${T}`
       params: Parameters<Aria2[T]>
     }[]
-  ) => ReturnType<Aria2[T]>
+  ) => Promise<ReturnType<Aria2[T]>>
 
-  declare listMethods: () => `aria2.${keyof Aria2}`[]
+  declare listMethods: () => `aria2.${Aria2Methods}`[]
 
-  declare listNotifications: () => `aria2.${keyof Aria2}`[]
+  declare listNotifications: () => `aria2.${Aria2Methods}`[]
 }
