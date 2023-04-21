@@ -34,7 +34,12 @@ export class A2Channel extends EventTarget implements EventBasedChannel {
           method: this.options.method ?? 'POST',
           body: JSON.stringify({
             ...data,
-            method: `aria2.${data.method}`,
+            method: [
+              ['multicall', 'listMethods', 'listNotifications'].includes(data.method)
+                ? 'system'
+                : 'aria2',
+              data.method
+            ].join('.'),
             params: [
               ...(this.options.secret ? [
                 [

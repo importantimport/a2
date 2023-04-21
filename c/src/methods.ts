@@ -5,7 +5,7 @@ import type { Uri, File, Peer, Server, TellStatusResult } from './types'
  * @remarks version 1.36.0
  * @see {@link http://aria2.github.io/manual/en/html/aria2c.html#methods}
  */
-export declare class Aria2 {
+export declare class Aria2 extends Aria2System {
   declare addUri: (
     uris: string[],
     options?: string,
@@ -112,4 +112,22 @@ export declare class Aria2 {
   declare forceShutdown: () => 'OK'
 
   declare saveSession: () => 'OK'
+}
+
+declare class Aria2System {
+  declare multicall: <
+    T extends keyof Omit<
+      Aria2,
+      'multicall' | 'listMethods' | 'listNotifications'
+    > = keyof Omit<Aria2, 'multicall' | 'listMethods' | 'listNotifications'>
+  >(
+    methods: {
+      methodName: `aria2.${T}`
+      params: Parameters<Aria2[T]>
+    }[]
+  ) => ReturnType<Aria2[T]>
+
+  declare listMethods: () => `aria2.${keyof Aria2}`[]
+
+  declare listNotifications: () => `aria2.${keyof Aria2}`[]
 }
