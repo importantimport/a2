@@ -125,7 +125,7 @@ declare class Aria2System {
       methodName: `aria2.${T}`
       params: Parameters<Aria2[T]>
     }[]
-  ) => Promise<ReturnType<Aria2[T]>[]>
+  ) => Promise<[ReturnType<Aria2[T]>][]>
 
   declare listMethods: () => `aria2.${Aria2Methods}`[]
 
