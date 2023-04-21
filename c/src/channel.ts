@@ -1,4 +1,5 @@
 import type { EventBasedChannel } from 'async-call-rpc'
+import type { Aria2 } from './index'
 
 export type A2ChannelOptions = {
   url: string
@@ -7,13 +8,22 @@ export type A2ChannelOptions = {
   method?: 'POST' | 'GET'
 }
 
-export type Data = {
+export type Data<T extends keyof Aria2 = keyof Aria2> = {
   id: string
   jsonrpc: '2.0'
-  method?: string
-  params?: unknown[]
+  method?: T
+  params?: Parameters<Aria2[T]>
   result?: unknown
 }
+
+const secret = ({
+  method,
+  user,
+  secret,
+}: Pick<A2ChannelOptions, 'user' | 'secret'> & Pick<Data, 'method'>) =>
+  !['listMethods', 'listNotifications'].includes(method) && secret
+    ? [user ?? 'token', secret].join(':')
+    : undefined
 
 export class A2Channel extends EventTarget implements EventBasedChannel<Data> {
   constructor(
@@ -45,16 +55,29 @@ export class A2Channel extends EventTarget implements EventBasedChannel<Data> {
                 : 'aria2',
               data.method,
             ].join('.'),
-            params: [
-              ...(this.options.secret
-                ? [
-                    [this.options.user ?? 'token', this.options.secret].join(
-                      ':'
-                    ),
-                  ]
-                : []),
-              ...data.params,
-            ],
+            params:
+              data.method === 'multicall'
+                ? (data as Data<'multicall'>).params.map((param) =>
+                    param.map(({ methodName, params }) => ({
+                      methodName,
+                      params: [
+                        secret({
+                          method: data.method,
+                          user: this.options.user,
+                          secret: this.options.secret,
+                        }),
+                        ...params,
+                      ],
+                    }))
+                  )
+                : [
+                    secret({
+                      method: data.method,
+                      user: this.options.user,
+                      secret: this.options.secret,
+                    }),
+                    ...data.params,
+                  ],
           }),
           headers: {
             Accept: 'application/json',
