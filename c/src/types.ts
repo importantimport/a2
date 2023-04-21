@@ -45,9 +45,9 @@ export type TellStatusResult = {
   completedLength: number
   uploadLength: number
   bitfield: string
-  downloadSpeed: unknown
-  uploadSpeed: unknown
-  infoHash?: unknown
+  downloadSpeed: number
+  uploadSpeed: number
+  infoHash?: string
   numSeeders?: number
   seeder?: boolean
   pieceLength: number
@@ -55,20 +55,20 @@ export type TellStatusResult = {
   connections: number
   errorCode?: number
   errorMessage?: string
-  followedBy?: unknown
-  following?: unknown
-  belongsTo?: unknown
+  followedBy?: string | string[]
+  following?: string | string[]
+  belongsTo?: string | string[]
   dir: string
   files: File[]
   bittorrent?: {
-    announceList: string[]
-    comment: unknown
-    creationDate: number
+    announceList?: string[]
+    comment?: string
+    creationDate?: number
     mode: 'single' | 'multi'
-    info: {
+    info?: {
       name: string
     }
   }
-  verifiedLength?: unknown
+  verifiedLength?: number
   verifyIntegrityPending?: true
 }
