@@ -23,10 +23,22 @@ const aria2 = createClient({
   secret: '123e4567-e89b-12d3-a456-426614174000', // optional
 })
 
-aria2.getVersion().then(console.log) // { enabledFeatures: [], version: '1.36.0' }
+await aria2.getVersion().then(console.log) // { enabledFeatures: [], version: '1.36.0' }
 
 // const notify = notify(createClient())
 // const [batch, emit, drop] = batch(createClient())
+```
+
+If you use user/passwd instead of secret:
+
+```ts
+import { createClient } from 'a2c'
+
+const aria2 = createClient({
+  url: 'http://localhost:6800/jsonrpc', // defaultValue
+  user: 'username', // --rpc-user
+  secret: 'password' // --rpc-passwd
+})
 ```
 
 `createClient` is a wrapper around `AsyncCall`. So of course you can use it directly if you want:
@@ -44,16 +56,4 @@ const aria2 = AsyncCall<Aria2>(
     }),
   }
 )
-```
-
-If you use user/passwd instead of secret:
-
-```ts
-import { createClient } from 'a2c'
-
-const aria2 = createClient({
-  url: 'http://localhost:6800/jsonrpc', // defaultValue
-  user: 'username', // --rpc-user
-  secret: 'password' // --rpc-passwd
-})
 ```

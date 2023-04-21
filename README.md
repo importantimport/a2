@@ -14,7 +14,7 @@ const aria2 = createClient({
   secret: '123e4567-e89b-12d3-a456-426614174000', // optional
 })
 
-aria2.getVersion().then(console.log) // { enabledFeatures: [], version: '1.36.0' }
+await aria2.getVersion().then(console.log) // { enabledFeatures: [], version: '1.36.0' }
 ```
 
 ## [A2Z](z)
@@ -22,6 +22,7 @@ aria2.getVersion().then(console.log) // { enabledFeatures: [], version: '1.36.0'
 Experimental Aria2 frontend, currently not working properly.
 
 ```bash
-pnpm dlx degit importantimport/a2z && cd a2z
+pnpm dlx degit importantimport/a2 && cd a2
+pnpm install
 pnpm dev
 ```
