@@ -6,12 +6,28 @@ import type { Uri, File, Peer, Server, TellStatusResult } from './types'
  * @see {@link http://aria2.github.io/manual/en/html/aria2c.html#methods}
  */
 export declare class Aria2 extends Aria2System {
+  /**
+   * This method adds a new download.
+   * @example
+   * ```ts
+   * await aria2.addUri(['http://example.org/file'])
+   * ```
+   * @see {@link https://aria2.github.io/manual/en/html/aria2c.html#aria2.addUri}
+   */
   declare addUri: (
     uris: string[],
     options?: string,
     position?: number
   ) => string
 
+  /**
+   * This method adds a BitTorrent download by uploading a ".torrent" file.
+   * @example
+   * ```ts
+   * await aria2.addTorrent(torrent)
+   * ```
+   * @see {@link https://aria2.github.io/manual/en/html/aria2c.html#aria2.addTorrent}
+   */
   declare addTorrent: (
     torrent: string,
     uris?: string[],
@@ -19,6 +35,14 @@ export declare class Aria2 extends Aria2System {
     position?: number
   ) => string
 
+  /**
+   * This method adds a Metalink download by uploading a ".metalink" file.
+   * @example
+   * ```ts
+   * await aria2.addMetalink(metalink)
+   * ```
+   * @see {@link https://aria2.github.io/manual/en/html/aria2c.html#aria2.addMetalink}
+   */
   declare addMetalink: (
     metalink: string,
     options?: string,
