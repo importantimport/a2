@@ -17,7 +17,7 @@ export declare class Aria2 extends Aria2System {
    */
   declare addUri: (
     uris: string[],
-    options?: Options,
+    options?: Partial<Options>,
     position?: number
   ) => string
 
@@ -32,7 +32,7 @@ export declare class Aria2 extends Aria2System {
   declare addTorrent: (
     torrent: string,
     uris?: string[],
-    options?: Options,
+    options?: Partial<Options>,
     position?: number
   ) => string
 
@@ -46,7 +46,7 @@ export declare class Aria2 extends Aria2System {
    */
   declare addMetalink: (
     metalink: string,
-    options?: Options,
+    options?: Partial<Options>,
     position?: number
   ) => string[]
 
