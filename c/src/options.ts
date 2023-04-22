@@ -1,3 +1,3 @@
-import type { HTTP_FTP_SFTP_Options } from "./options/http-ftp-sftp"
+import type { HttpFtpSftpOptions } from "./options/http-ftp-sftp"
 
-export type Options = Record<string, string> & HTTP_FTP_SFTP_Options
+export type Options = Record<string, string> & HttpFtpSftpOptions

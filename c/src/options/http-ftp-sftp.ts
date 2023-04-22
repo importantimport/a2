@@ -4,7 +4,7 @@ type Size = number | `${number}K` | `${number}M`
  * HTTP/FTP/SFTP Options
  * @see {@link https://aria2.github.io/manual/en/html/aria2c.html#http-ftp-sftp-options}
  */
-export type HTTP_FTP_SFTP_Options = {
+export type HttpFtpSftpOptions = {
   /**
    * Use a proxy server for all protocols.
    * @see {@link https://aria2.github.io/manual/en/html/aria2c.html#cmdoption-all-proxy}
