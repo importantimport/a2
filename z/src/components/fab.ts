@@ -2,17 +2,18 @@ import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
 import '@material/web/fab/fab'
+import '@material/web/icon/icon'
 
 @customElement('a2z-fab')
 export class Fab extends LitElement {
   render() {
-    return html`<md-fab title="Add" icon="add"></md-fab>`
+    return html`<md-fab title="Add" variant="primary">
+      <md-icon slot="icon">add</md-icon>
+    </md-fab>`
   }
 
   static styles = css`
     md-fab {
-      --md-fab-container-color: var(--md-sys-color-primary-container);
-      --md-fab-icon-color: var(--md-sys-color-on-primary-container);
       position: fixed;
       z-index: 100;
       bottom: 6em;
