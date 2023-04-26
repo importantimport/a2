@@ -9,7 +9,6 @@ import '@material/web/icon/icon'
 
 /**
  * TODO:
- * - Inactive outline icon (Material Symbols?)
  * - Navigation rail
  *   - @see {@link https://m3.material.io/components/navigation-rail/overview}
  * - Use href directly instead of dirty onclick
