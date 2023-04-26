@@ -7,14 +7,11 @@ import { applyLocale, getLocale } from '~/lib/utils/locales'
 
 import { db } from '~/lib/database'
 
-// import '@material/web/select/filled-select'
-// import '@material/web/select/select-option'
-// <md-filled-select slot="end">
-//   <md-select-option value="device" selected>devices</md-select-option>
-// </md-filled-select> 
+import '@material/web/select/filled-select'
+import '@material/web/select/select-option'
 
 const localeNames: {
-  [L in typeof allLocales[number]]: string
+  [L in (typeof allLocales)[number]]: string
 } = {
   en: 'English',
   'ja-JP': '日本語',
@@ -40,6 +37,22 @@ export class LocalePicker extends LitElement {
       </select>
     `
   }
+
+  // render() {
+  //   return html`
+  //     <md-filled-select @change=${this.localeChanged} slot=${this.slot}>
+  //       ${allLocales.map(
+  //         (locale) => html`
+  //           <md-select-option
+  //             value=${locale}
+  //             headline=${`${localeNames[locale]} (${locale})`}
+  //             ?selected=${locale === getLocale()}
+  //           ></md-select-option>
+  //         `
+  //       )}
+  //     </md-filled-select>
+  //   `
+  // }
 
   @property({ type: String })
   slot = 'end'
