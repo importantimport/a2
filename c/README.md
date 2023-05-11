@@ -20,7 +20,7 @@ import { createClient } from 'a2c'
 
 const aria2 = createClient({
   url: 'http://localhost:6800/jsonrpc', // defaultValue
-  secret: '123e4567-e89b-12d3-a456-426614174000', // optional
+  secret: '123e4567-e89b-12d3-a456-426614174000', // --rpc-secret, optional
 })
 
 await aria2.getVersion().then(console.log) // { enabledFeatures: [], version: '1.36.0' }
@@ -53,8 +53,8 @@ const aria2 = AsyncCall<Aria2>(
   {},
   {
     channel: new A2Channel({
-      url: 'http://localhost:6800/jsonrpc',
-      secret: '', // optional
+      url: 'http://localhost:6800/jsonrpc', // defaultValue
+      secret: '', // --rpc-secret, optional
     }),
   }
 )
