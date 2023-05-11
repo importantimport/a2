@@ -90,7 +90,11 @@ export declare class Aria2 extends Aria2System {
     keys?: string[]
   ) => TellStatusResult[]
 
-  declare tellStopped: (keys?: string[]) => TellStatusResult[]
+  declare tellStopped: (
+    offset: number,
+    num: number,
+    keys?: string[]
+  ) => TellStatusResult[]
 
   declare changePosition: (
     gid: string,
