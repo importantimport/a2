@@ -23,7 +23,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 19.9.0
+          node-version: latest
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install pnpm
