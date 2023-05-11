@@ -60,7 +60,7 @@ const aria2 = AsyncCall<Aria2>(
 )
 ```
 
-A2Channel uses the `fetch` in the runtime environment.
+A2Channel uses the [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/fetch) in the runtime environment.
 
 But for some custom use cases, you can also implement your own [EventBasedChannel](https://github.com/Jack-Works/async-call-rpc#the-first-concept-channel) and reuse the A2C type definition:
 
