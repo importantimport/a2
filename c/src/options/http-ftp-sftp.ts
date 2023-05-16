@@ -1,10 +1,10 @@
-type Size = number | `${number}K` | `${number}M`
+import type { SIZE, InputFileOptions } from './shared'
 
 /**
  * HTTP/FTP/SFTP Options
  * @see {@link https://aria2.github.io/manual/en/html/aria2c.html#http-ftp-sftp-options}
  */
-export type HttpFtpSftpOptions = {
+type HttpFtpSftpOptionsRaw = {
   /**
    * Use a proxy server for all protocols.
    * @see {@link https://aria2.github.io/manual/en/html/aria2c.html#cmdoption-all-proxy}
@@ -42,7 +42,7 @@ export type HttpFtpSftpOptions = {
    * @defaultValue `0`
    * @see {@link https://aria2.github.io/manual/en/html/aria2c.html#cmdoption-lowest-speed-limit}
    */
-  'lowest-speed-limit': Size
+  'lowest-speed-limit': SIZE
   /**
    * The maximum number of connections to one server for each download.
    * @defaultValue `1`
@@ -54,7 +54,7 @@ export type HttpFtpSftpOptions = {
 
   'max-tries': number
 
-  'min-split-size': Size
+  'min-split-size': SIZE
   /**
    * Specify the path to the netrc file.
    * @defaultValue `$(HOME)/.netrc`
@@ -142,3 +142,5 @@ export type HttpFtpSftpOptions = {
    */
   'uri-selector': 'inorder' | 'feedback' | 'adaptive'
 }
+
+export type HttpFtpSftpOptions = Omit<HttpFtpSftpOptionsRaw, keyof Omit<HttpFtpSftpOptionsRaw, InputFileOptions>>
