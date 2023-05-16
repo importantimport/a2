@@ -2,6 +2,12 @@
 
 Aria2 JSON-RPC client with full type definition.
 
+## Features
+
+- ***Decoupling.*** A2C is responsible for only the Aria2-specific part, using `async-call-rpc` to implement the JSON-RPC client.
+- ***Lightweight.*** Most of the content of A2C is type definitions, they are generally not bundled.
+- ***Just Fetch.*** A2C uses the runtime environment `fetch`, not `node-fetch`, `isomorphic-fetch` or other...
+
 ## Install
 
 A2C requires [`async-call-rpc`](https://github.com/Jack-Works/async-call-rpc), so you should install them both.
