@@ -1,6 +1,6 @@
 # A2C
 
-Aria2 JSON-RPC client with full type definition.
+Lightweight Aria2 JSON-RPC client with full type definition.
 
 ## Features
 

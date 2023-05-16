@@ -9,7 +9,7 @@
     "jsonrpc",
     "typescript"
   ],
-  "description": "Aria2 JSON-RPC client with full type definition.",
+  "description": "Lightweight Aria2 JSON-RPC client with full type definition.",
   "repository": {
     "type": "git",
     "url": "https://github.com/importantimport/a2.git",

@@ -4,7 +4,7 @@ A JSON-RPC client and experimental frontend for Aria 2.
 
 ## [A2C](c)
 
-Aria2 JSON-RPC client with full type definition.
+Lightweight Aria2 JSON-RPC client with full type definition.
 
 ```ts
 import { createClient } from 'a2c'
