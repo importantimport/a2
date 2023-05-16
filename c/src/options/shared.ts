@@ -4,7 +4,7 @@ export type SIZE = number | `${number}K` | `${number}M`
  * Input File Options
  * @see {@link https://aria2.github.io/manual/en/html/aria2c.html#input-file}
  */
-export type InputFileOptions = 
+export type InputFileOptionsKeys = 
   'all-proxy' |
   'all-proxy-passwd' |
   'all-proxy-user' |

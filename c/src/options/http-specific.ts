@@ -1,13 +1,13 @@
-import type { InputFileOptions } from "./shared"
+import type { InputFileOptionsKeys } from './shared'
 
 /**
  * HTTP Specific Options
  * @see {@link https://aria2.github.io/manual/en/html/aria2c.html#http-specific-options}
  */
-type HttpSpecificOptionsRaw = {
+export type HttpSpecificOptions = {
   'ca-certificate': string
 
-  'certificate': string
+  certificate: string
 
   'check-certificate': boolean
 
@@ -29,13 +29,13 @@ type HttpSpecificOptionsRaw = {
 
   'private-key': string
 
-  'referer': string
+  referer: string
 
   'enable-http-keep-alive': boolean
 
   'enable-http-pipelining': boolean
 
-  'header': string
+  header: string
 
   'load-cookies': string
 
@@ -46,4 +46,7 @@ type HttpSpecificOptionsRaw = {
   'user-agent': string
 }
 
-export type HttpSpecificOptions = Omit<HttpSpecificOptionsRaw, keyof Omit<HttpSpecificOptionsRaw, InputFileOptions>>
+export type InputFileHttpSpecificOptions = Omit<
+  HttpSpecificOptions,
+  keyof Omit<HttpSpecificOptions, InputFileOptionsKeys>
+>

@@ -1,4 +1,6 @@
-import type { HttpFtpSftpOptions } from './options/http-ftp-sftp'
-import type { HttpSpecificOptions } from './options/http-specific'
+import type { InputFileHttpFtpSftpOptions } from './options/http-ftp-sftp'
+import type { InputFileHttpSpecificOptions } from './options/http-specific'
 
-export type Options = Record<string, string> & HttpFtpSftpOptions & HttpSpecificOptions
+export type InputFileOptions = Record<string, string> &
+  InputFileHttpFtpSftpOptions &
+  InputFileHttpSpecificOptions

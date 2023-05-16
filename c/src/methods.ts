@@ -1,5 +1,5 @@
 import type { Uri, File, Peer, Server, TellStatusResult } from './types'
-import type { Options } from './options'
+import type { InputFileOptions } from './options'
 
 /**
  * Aria2 JSON-RPC Methods type definition for Async Call RPC
@@ -17,7 +17,7 @@ export declare class Aria2 extends Aria2System {
    */
   declare addUri: (
     uris: string[],
-    options?: Partial<Options>,
+    options?: Partial<InputFileOptions>,
     position?: number
   ) => string
 
@@ -32,7 +32,7 @@ export declare class Aria2 extends Aria2System {
   declare addTorrent: (
     torrent: string,
     uris?: string[],
-    options?: Partial<Options>,
+    options?: Partial<InputFileOptions>,
     position?: number
   ) => string
 
@@ -46,7 +46,7 @@ export declare class Aria2 extends Aria2System {
    */
   declare addMetalink: (
     metalink: string,
-    options?: Partial<Options>,
+    options?: Partial<InputFileOptions>,
     position?: number
   ) => string[]
 

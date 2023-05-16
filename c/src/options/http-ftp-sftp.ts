@@ -1,10 +1,10 @@
-import type { SIZE, InputFileOptions } from './shared'
+import type { SIZE, InputFileOptionsKeys } from './shared'
 
 /**
  * HTTP/FTP/SFTP Options
  * @see {@link https://aria2.github.io/manual/en/html/aria2c.html#http-ftp-sftp-options}
  */
-type HttpFtpSftpOptionsRaw = {
+export type HttpFtpSftpOptions = {
   /**
    * Use a proxy server for all protocols.
    * @see {@link https://aria2.github.io/manual/en/html/aria2c.html#cmdoption-all-proxy}
@@ -143,4 +143,4 @@ type HttpFtpSftpOptionsRaw = {
   'uri-selector': 'inorder' | 'feedback' | 'adaptive'
 }
 
-export type HttpFtpSftpOptions = Omit<HttpFtpSftpOptionsRaw, keyof Omit<HttpFtpSftpOptionsRaw, InputFileOptions>>
+export type InputFileHttpFtpSftpOptions = Omit<HttpFtpSftpOptions, keyof Omit<HttpFtpSftpOptions, InputFileOptionsKeys>>
