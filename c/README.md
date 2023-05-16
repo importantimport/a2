@@ -1,5 +1,9 @@
 # A2C
 
+[![npm](https://img.shields.io/npm/v/a2c)](https://www.npmjs.com/package/a2c)
+![minified size](https://img.shields.io/bundlephobia/min/a2c)
+![downloads](https://img.shields.io/npm/dt/a2c)
+
 Lightweight Aria2 JSON-RPC client with full type definition.
 
 ## Features
