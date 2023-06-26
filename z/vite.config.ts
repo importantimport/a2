@@ -1,6 +1,4 @@
 import { defineConfig, mergeConfig } from 'vite'
-// import babelPlugin from 'vite-plugin-babel'
-// import civetPlugin from 'vite-plugin-civet'
 import UnheadVite from '@unhead/addons/vite'
 import template from 'rollup-plugin-html-literals'
 import { VitePWA } from 'vite-plugin-pwa'
@@ -11,28 +9,6 @@ export const baseConfig = defineConfig({
   build: { target: 'es2022' },
   esbuild: { legalComments: 'external' },
   plugins: [
-    // babelPlugin({
-    //   apply: 'serve',
-    //   babelConfig: {
-    //     assumptions: { setPublicClassFields: true },
-    //     presets: ['@babel/preset-typescript'],
-    //     plugins: [
-    //       [
-    //         '@babel/plugin-proposal-decorators',
-    //         {
-    //           version: '2018-09',
-    //           decoratorsBeforeExport: true,
-    //         },
-    //       ],
-    //       ['@babel/plugin-proposal-class-properties'],
-    //     ],
-    //   },
-    // }),
-    // civetPlugin({
-    //   stripTypes: true,
-    //   outputExtension: 'js',
-    //   outputTransformerPlugin: { serve: 'babel-plugin' },
-    // }),
     UnheadVite(),
     template(),
     tsconfigPaths(),
