@@ -10,14 +10,16 @@ export const baseConfig = defineConfig({
   esbuild: { legalComments: 'external' },
   plugins: [
     UnheadVite(),
-    minifyHTML(),
     tsconfigPaths(),
   ],
 })
 
-export default mergeConfig(
+export default defineConfig(({ mode }) => mergeConfig(
   baseConfig,
   defineConfig({
-    plugins: [VitePWA({ injectRegister: 'inline' })],
+    plugins: [
+      ...(mode === 'prod' ? [minifyHTML()] : []),
+      VitePWA({ injectRegister: 'inline' })
+    ],
   })
-)
+))
