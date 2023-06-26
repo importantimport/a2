@@ -1,6 +1,6 @@
 import { defineConfig, mergeConfig } from 'vite'
 import UnheadVite from '@unhead/addons/vite'
-import template from 'rollup-plugin-html-literals'
+import minifyHTML from 'rollup-plugin-minify-html-literals-v3'
 import { VitePWA } from 'vite-plugin-pwa'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
@@ -10,7 +10,7 @@ export const baseConfig = defineConfig({
   esbuild: { legalComments: 'external' },
   plugins: [
     UnheadVite(),
-    template(),
+    minifyHTML(),
     tsconfigPaths(),
   ],
 })
