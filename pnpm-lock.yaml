@@ -61,6 +61,9 @@ importers:
       material-symbols:
         specifier: ^0.8.1
         version: 0.8.1
+      mcu-extra:
+        specifier: ^0.0.5
+        version: 0.0.5(@material/material-color-utilities@0.2.6)
       rxdb:
         specifier: ^14.14.1
         version: 14.14.1(rxjs@8.0.0-alpha.10)
@@ -4932,6 +4935,14 @@ packages:
 
   /material-symbols@0.8.1:
     resolution: {integrity: sha512-hJszgoT33GamNWfuH5GvO8vW+UgHs7SyloJbIfAQQ2KH8iEuQ0PgTdyFQFpVNdlDS3jm4wonswtKB8khGCSDgQ==}
+    dev: false
+
+  /mcu-extra@0.0.5(@material/material-color-utilities@0.2.6):
+    resolution: {integrity: sha512-fmjDvcqxzARkTLL5POiWjtQfYD9qDdF1mP8Dtw+C1DYzP43Se/9q5ZxzseV7BfbMAUn594twby00jlJWc69L0A==}
+    peerDependencies:
+      '@material/material-color-utilities': ^0.2.6
+    dependencies:
+      '@material/material-color-utilities': 0.2.6
     dev: false
 
   /merge-stream@2.0.0:

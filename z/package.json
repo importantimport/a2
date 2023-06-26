@@ -25,6 +25,7 @@
     "lit": "3.0.0-pre.0",
     "lokijs": "^1.5.12",
     "material-symbols": "^0.8.1",
+    "mcu-extra": "^0.0.5",
     "rxdb": "^14.14.1",
     "rxjs": "8.0.0-alpha.10",
     "unhead": "^1.1.28"

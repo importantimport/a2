@@ -1,9 +1,11 @@
 import {
-  applyTheme as materialApplyTheme,
-  themeFromSourceColor,
   argbFromHex,
   hexFromArgb,
 } from '@material/material-color-utilities'
+import {
+  applyTheme as materialApplyTheme,
+  themeFromSourceColor,
+} from 'mcu-extra'
 import { useHead } from 'unhead'
 
 export const applyTheme = (hex?: string) => {
