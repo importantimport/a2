@@ -3,8 +3,8 @@ import { customElement, property } from 'lit/decorators.js'
 import { localized, msg } from '@lit/localize'
 import type { Router } from '@lit-labs/router'
 
-import '@material/web/navigationbar/navigation-bar'
-import '@material/web/navigationtab/navigation-tab'
+import '@material/web/labs/navigationbar/navigation-bar'
+import '@material/web/labs/navigationtab/navigation-tab'
 import '@material/web/icon/icon'
 
 /**
