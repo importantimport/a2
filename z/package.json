@@ -15,6 +15,7 @@
     "@lit-labs/router": "^0.1.1",
     "@lit-labs/task": "^2.1.2",
     "@lit/localize": "^0.11.4",
+    "@maicol07/material-web-additions": "^1.2.16",
     "@material/material-color-utilities": "^0.2.6",
     "@material/web": "1.0.0-pre.11",
     "@unhead/addons": "^1.1.28",
