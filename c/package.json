@@ -19,24 +19,24 @@
   "bugs": "https://github.com/importantimport/a2/issues",
   "type": "module",
   "types": "./dist/index.d.ts",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     }
   },
   "scripts": {
-    "build": "unbuild"
+    "build": "tsup",
+    "build:watch": "tsup --watch"
   },
   "devDependencies": {
-    "async-call-rpc": "^6.3.1",
-    "unbuild": "^2.0.0"
+    "async-call-rpc": "^6.3.1"
   },
   "peerDependencies": {
     "async-call-rpc": "^6.1.5"
