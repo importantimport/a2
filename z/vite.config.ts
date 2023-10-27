@@ -1,14 +1,22 @@
 import { compileLitTemplates } from '@lit-labs/compiler'
 import typescript from '@rollup/plugin-typescript'
 import UnheadVite from '@unhead/addons/vite'
-import minifyHTML from 'rollup-plugin-minify-html-literals-v3'
+import { builtinModules } from 'node:module'
 import { type Plugin, defineConfig, mergeConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 export const baseConfig = defineConfig({
   envPrefix: ['A2Z_', 'VITE_'],
-  build: { target: 'es2022' },
+  build: {
+    target: 'es2022',
+    rollupOptions: {
+      external: [
+        ...builtinModules,
+        ...builtinModules.map(module => `node:${module}`)
+      ]
+    }
+  },
   esbuild: { legalComments: 'external' },
   plugins: [
     typescript({
@@ -23,12 +31,4 @@ export const baseConfig = defineConfig({
   ],
 })
 
-export default defineConfig(({ mode }) => mergeConfig(
-  baseConfig,
-  defineConfig({
-    plugins: [
-      ...(mode === 'prod' ? [minifyHTML()] : []),
-      VitePWA({ injectRegister: 'inline' })
-    ],
-  })
-))
+export default mergeConfig(baseConfig, { plugins: [VitePWA({ injectRegister: 'inline' })] })
