@@ -38,6 +38,9 @@ importers:
       '@maicol07/material-web-additions':
         specifier: ^1.4.3
         version: 1.4.3(@material/web@1.0.1)
+      '@material-symbols/font-400':
+        specifier: ^0.13.2
+        version: 0.13.2
       '@material/material-color-utilities':
         specifier: ^0.2.7
         version: 0.2.7
@@ -68,9 +71,6 @@ importers:
       lokijs:
         specifier: ^1.5.12
         version: 1.5.12
-      material-symbols:
-        specifier: ^0.13.2
-        version: 0.13.2
       mcu-extra:
         specifier: ^0.0.5
         version: 0.0.5(@material/material-color-utilities@0.2.7)
@@ -2205,6 +2205,10 @@ packages:
       '@material/web': 1.0.1
       lit: 2.8.0
       tslib: 2.6.2
+    dev: false
+
+  /@material-symbols/font-400@0.13.2:
+    resolution: {integrity: sha512-vcsxFg83xP4UjglcG4mWwsZJ/obLYcTzdwAmhYDtPgSIjbmF8p7+wiw/79TDJBxdvnfDnnc0wFsqylTr1La7OA==}
     dev: false
 
   /@material/animation@14.0.0:
@@ -4809,10 +4813,6 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
-    dev: false
-
-  /material-symbols@0.13.2:
-    resolution: {integrity: sha512-O8p2pguTZ/3EXym606wFxwI7DPS+cPM5jlS2mcO3EIcqhnHcKQbTD9lVkd0JK4Ygq/vuuiLl44T2xZYMJmpwLw==}
     dev: false
 
   /mcu-extra@0.0.5(@material/material-color-utilities@0.2.7):
