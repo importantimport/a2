@@ -30,7 +30,7 @@
     "lokijs": "^1.5.12",
     "mcu-extra": "^0.0.5",
     "rxdb": "^14.17.1",
-    "rxjs": "7.8.1",
+    "rxjs": "8.0.0-alpha.12",
     "unhead": "^1.7.4"
   },
   "devDependencies": {
