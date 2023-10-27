@@ -6,7 +6,7 @@ import { filesize } from 'filesize'
 import type { File, TellStatusResult } from 'a2c'
 import { aria2 } from '~/lib/rpc'
 
-import '@material/web/button/tonal-button'
+// import '@material/web/button/filled-tonal-button'
 import '~/components/fab'
 
 @customElement('a2z-downloads')

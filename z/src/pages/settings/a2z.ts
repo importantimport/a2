@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
-import { Task } from '@lit-labs/task'
+import { Task } from '@lit/task'
 
 // import '@material/web/divider/divider'
 import '@material/web/icon/icon'
