@@ -28,14 +28,14 @@ export class Nav extends LitElement {
           }}
           label=${msg('Downloads')}
         >
-          <md-icon slot="activeIcon">download</md-icon>
-          <md-icon slot="inactiveIcon">download</md-icon>
+          <md-icon slot="active-icon">download</md-icon>
+          <md-icon slot="inactive-icon">download</md-icon>
         </md-navigation-tab>
         <md-navigation-tab
           label="History"
         >
-          <md-icon slot="activeIcon">history</md-icon>
-          <md-icon slot="inactiveIcon">history</md-icon>
+          <md-icon slot="active-icon">history</md-icon>
+          <md-icon slot="inactive-icon">history</md-icon>
         </md-navigation-tab>
         <md-navigation-tab
           @click=${async () => {
@@ -44,8 +44,8 @@ export class Nav extends LitElement {
           }}
           label=${msg('Settings')}
         >
-          <md-icon slot="activeIcon">settings</md-icon>
-          <md-icon slot="inactiveIcon">settings</md-icon>
+          <md-icon slot="active-icon">settings</md-icon>
+          <md-icon slot="inactive-icon">settings</md-icon>
         </md-navigation-tab>
       </md-navigation-bar>
     `
@@ -62,7 +62,7 @@ export class Nav extends LitElement {
       bottom: 0;
     }
 
-    md-icon[slot="activeIcon"] {
+    md-icon[slot="active-icon"] {
       --md-icon-font-variation-settings: 'FILL' 1;
     }
   `

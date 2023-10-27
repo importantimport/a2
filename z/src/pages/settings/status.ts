@@ -14,18 +14,22 @@ export class SettingsStatus extends LitElement {
   render() {
     return html`
       <md-list>
-        <md-list-item
-          headline="Address"
-          trailingSupportingText=${import.meta.env.A2Z_RPC_URL ?? 'http://localhost:6800/jsonrpc'}
-        ></md-list-item>
-        <md-list-item
-          headline="Version"
-          trailingSupportingText=${version}
-        ></md-list-item>
+        <md-list-item>
+          <span slot="headline">Address</span>
+          <span slot="trailing-supporting-text">${import.meta.env.A2Z_RPC_URL ?? 'http://localhost:6800/jsonrpc'}</span>
+        </md-list-item>
+        <md-list-item>
+          <span slot="headline">Version</span>
+          <span slot="trailing-supporting-text">${version}</span>
+        </md-list-item>
         <md-divider></md-divider>
-        <md-list-item supportingText="Enabled features" disabled></md-list-item>
+        <md-list-item disabled>
+          <span slot="supporting-text">Enabled features</span>
+        </md-list-item>
         ${enabledFeatures.map(
-          (feature) => html`<md-list-item headline=${feature}></md-list-item>`
+          (feature) => html`<md-list-item>
+            <span slot="headline">${feature}</span>
+          </md-list-item>`
         )}
       </md-list>
     `

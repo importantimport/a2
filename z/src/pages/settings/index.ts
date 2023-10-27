@@ -5,7 +5,6 @@ import { localized, msg } from '@lit/localize'
 import '@material/web/icon/icon'
 import '@material/web/list/list'
 import '@material/web/list/list-item'
-// import '@material/web/list/list-item-link'
 
 @localized()
 @customElement('a2z-settings-index')
@@ -13,27 +12,29 @@ export class SettingsIndex extends LitElement {
   render() {
     return html`
       <md-list>
-        <md-list-item headline=${msg('RPC Settings')} disabled>
+        <md-list-item disabled>
           <md-icon data-variant="icon" slot="start">manage_accounts</md-icon>
+          <span slot="headline">${msg('RPC Settings')}</span>
         </md-list-item>
         <md-list-item
           type="link"
-          headline=${msg('A2Z Settings')}
-          supportingText="Languages, Theme color, Dark mode"
           href="/settings/a2z"
         >
           <md-icon data-variant="icon" slot="start">display_settings</md-icon>
+          <span slot="headline">${msg('A2Z Settings')}</span>
+          <span slot="supporting-text">Languages, Theme color, Dark mode</span>
         </md-list-item>
-        <md-list-item headline=${msg('Aria2 Settings')} disabled>
+        <md-list-item disabled>
           <md-icon data-variant="icon" slot="start">tune</md-icon>
+          <span slot="headline">${msg('Aria2 Settings')}</span>
         </md-list-item>
         <md-list-item
           type="link"
-          headline=${msg('Status')}
-          supportingText="Version, Enabled features"
           href="/settings/status"
         >
           <md-icon data-variant="icon" slot="start">info</md-icon>
+          <span slot="headline">${msg('Status')}</span>
+          <span slot="supporting-text">Version, Enabled features</span>
         </md-list-item>
       </md-list>
     `

@@ -23,12 +23,14 @@ export class SettingsA2Z extends LitElement {
   render() {
     return html`
       <md-list>
-        <md-list-item headline="Languages">
+        <md-list-item>
           <md-icon data-variant="icon" slot="start">language</md-icon>
+          <span slot="headline">Languages</span>
           <a2z-locale-picker slot="end"></a2z-locale-picker>
         </md-list-item>
-        <md-list-item headline="Theme Color">
+        <md-list-item>
           <md-icon data-variant="icon" slot="start">palette</md-icon>
+          <span slot="headline">Theme Color</span>
           ${this._getThemeColor.render({
             complete: (value) => html`
               <input
@@ -40,12 +42,14 @@ export class SettingsA2Z extends LitElement {
             `,
           })}
         </md-list-item>
-        <md-list-item headline="Theme Scheme">
+        <md-list-item>
           <md-icon data-variant="icon" slot="start">auto_mode</md-icon>
+          <span slot="headline">Theme Scheme</span>
           <a2z-theme-scheme-picker slot="end"></a2z-theme-scheme-picker>
         </md-list-item>
-        <md-list-item headline="Auto Refresh">
+        <md-list-item>
           <md-icon data-variant="icon" slot="start">autorenew</md-icon>
+          <span slot="headline">Auto Refresh</span>
           <div slot="end">
             <md-switch></md-switch>
             <!-- <md-divider></md-divider> -->
@@ -56,6 +60,7 @@ export class SettingsA2Z extends LitElement {
               withLabel="true">
             </md-slider>
           </div>
+        </md-list-item>
       </md-list>
     `
   }
