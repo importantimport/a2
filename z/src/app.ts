@@ -2,16 +2,18 @@ import { LitElement, html } from 'lit'
 import { until } from 'lit/directives/until.js'
 import { customElement, property } from 'lit/decorators.js'
 import { Router } from '@lit-labs/router'
+import { provide } from '@lit/context'
 import { createHead } from 'unhead'
-import { db } from '~/lib/database'
+
+import { database, databaseContext } from '~/lib/database'
 import { applyTheme } from '~/lib/utils/apply-theme'
-import { applyLocale } from './lib/utils/locales'
+import { applyLocale } from '~/lib/utils/locales'
 
 import '~/components/nav'
 
 import '~/app.css'
 
-const database = await db()
+const db = await database()
 
 @customElement('a2z-app')
 export class App extends LitElement {
@@ -22,8 +24,11 @@ export class App extends LitElement {
     `
   }
 
+  @provide({ context: databaseContext })
+  database = db
+
   @property({ attribute: false })
-  head: unknown = createHead()
+  accessor head: unknown = createHead()
 
   connectedCallback() {
     super.connectedCallback()
@@ -33,7 +38,7 @@ export class App extends LitElement {
 
   async _applyTheme() {
     applyTheme(
-      await database.settings
+      await this.database.settings
         .findOne({ selector: { key: 'theme-color' } })
         .exec()
         .then((res) => res?.value)
@@ -41,7 +46,7 @@ export class App extends LitElement {
   }
 
   async _applyLocale() {
-    const locale = await database.settings
+    const locale = await this.database.settings
       .findOne({ selector: { key: 'language' } })
       .exec()
       .then((res) => res?.value)

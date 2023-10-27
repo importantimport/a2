@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
-import { customElement } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
 import { Task } from '@lit/task'
+import { consume } from '@lit/context'
 
 // import '@material/web/divider/divider'
 import '@material/web/icon/icon'
@@ -13,10 +14,8 @@ import '@material/web/switch/switch'
 import '~/pages/settings/a2z/locale-picker'
 import '~/pages/settings/a2z/theme-scheme-picker'
 
-import { db } from '~/lib/database'
 import { applyTheme } from '~/lib/utils/apply-theme'
-
-const database = await db()
+import { type A2ZDatabase, databaseContext } from '~/lib/database'
 
 @customElement('a2z-settings-a2z')
 export class SettingsA2Z extends LitElement {
@@ -65,10 +64,14 @@ export class SettingsA2Z extends LitElement {
     `
   }
 
+  @consume({ context: databaseContext })
+  @property({ attribute: false })
+  public database?: A2ZDatabase
+
   private _getThemeColor = new Task(
     this,
     () =>
-      database.settings
+      this.database?.settings
         .findOne({ selector: { key: 'theme-color' } })
         .exec()
         .then((res) => res?.value),
@@ -76,7 +79,7 @@ export class SettingsA2Z extends LitElement {
   )
 
   themeColorChange({ target: { value } }: { target: HTMLInputElement }) {
-    database.settings.incrementalUpsert({
+    this.database?.settings.incrementalUpsert({
       updatedAt: new Date().getTime(),
       key: 'theme-color',
       value,

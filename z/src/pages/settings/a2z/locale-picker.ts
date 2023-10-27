@@ -1,11 +1,11 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { localized } from '@lit/localize'
+import { consume } from '@lit/context'
 
+import { type A2ZDatabase, databaseContext } from '~/lib/database'
 import { allLocales } from '~/generated/locales'
 import { applyLocale, getLocale } from '~/lib/utils/locales'
-
-import { db } from '~/lib/database'
 
 import '@material/web/select/filled-select'
 import '@material/web/select/select-option'
@@ -18,8 +18,6 @@ const localeNames: {
   'zh-Hans': '简体中文',
   'zh-Hant': '正體中文',
 }
-
-const database = await db()
 
 @localized()
 @customElement('a2z-locale-picker')
@@ -54,13 +52,17 @@ export class LocalePicker extends LitElement {
   //   `
   // }
 
+  @consume({ context: databaseContext })
+  @property({ attribute: false })
+  public database?: A2ZDatabase
+
   @property({ type: String })
-  slot = 'end'
+  accessor slot = 'end'
 
   async localeChanged({ target: { value } }: { target: HTMLSelectElement }) {
     if (value !== getLocale()) {
       await applyLocale(value)
-      database.settings.incrementalUpsert({
+      this.database?.settings.incrementalUpsert({
         updatedAt: new Date().getTime(),
         key: 'language',
         value,

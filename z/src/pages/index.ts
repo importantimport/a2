@@ -48,7 +48,7 @@ export class Downloads extends LitElement {
   }
 
   @property({ attribute: false })
-  active: TellStatusResult[] = []
+  accessor active: TellStatusResult[] = []
 
   constructor() {
     super()

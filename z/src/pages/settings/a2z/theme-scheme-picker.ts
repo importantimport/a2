@@ -26,7 +26,7 @@ export class ThemeSchemePicker extends LitElement {
   }
 
   @property({ type: String })
-  slot = 'end'
+  accessor slot = 'end'
 }
 
 declare global {

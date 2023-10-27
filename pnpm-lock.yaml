@@ -29,6 +29,9 @@ importers:
       '@lit-labs/router':
         specifier: ^0.1.2
         version: 0.1.2
+      '@lit/context':
+        specifier: ^1.0.0
+        version: 1.0.0
       '@lit/localize':
         specifier: ^0.12.0
         version: 0.12.0
@@ -2346,6 +2349,13 @@ packages:
 
   /@lit-labs/ssr-dom-shim@1.1.2:
     resolution: {integrity: sha512-jnOD+/+dSrfTWYfSXBXlo5l5f0q1UuJo3tkbMDCYA2lKUYq79jaxqtGEvnRoh049nt1vdo1+45RinipU6FGY2g==}
+
+  /@lit/context@1.0.0:
+    resolution: {integrity: sha512-bdqj6z6Mj+TpYfo2seHy1mlBzYrW+CyHnDQLD0DI7iQLELs2Fk6icZwvbvbskR0E94QG4aO/35j6PTJ9wWTv0Q==}
+    dependencies:
+      '@lit/reactive-element': 2.0.0
+      lit: 3.0.0
+    dev: false
 
   /@lit/localize-tools@0.7.0:
     resolution: {integrity: sha512-sM59gJjU6gf55pyk1PuhotCy0O4qnXbBDFLGViklCDIEnZHVSQqSYgti4eUglsyoVD4baQ1sjn+kGT7fNENAZA==}

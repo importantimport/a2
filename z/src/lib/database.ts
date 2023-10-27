@@ -1,3 +1,4 @@
+import { createContext } from '@lit/context'
 import {
   type RxDatabase,
   addRxPlugin,
@@ -28,7 +29,7 @@ if (import.meta.env.DEV)
 
 addRxPlugin(RxDBLeaderElectionPlugin)
 
-type A2ZDatabase = RxDatabase<{
+export type A2ZDatabase = RxDatabase<{
   settings: SettingsCollection
 }>
 
@@ -61,7 +62,9 @@ const _create = async () => {
 }
 
 // export type { LeaderElector } from 'broadcast-channel'
-export const db = () => {
+export const database = () => {
   if (!promise) promise = _create()
   return promise
 }
+
+export const databaseContext = createContext<A2ZDatabase>(Symbol('a2z-database'))
