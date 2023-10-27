@@ -14,21 +14,21 @@ export class Settings extends LitElement {
       name: 'Index',
       render: () => html`<a2z-settings-index></a2z-settings-index>`,
       enter: async () =>
-        await import('./settings/index').then((res) => (res ? true : false)),
+        await import('./settings/index').then((res) => !!res),
     },
     {
       path: 'a2z',
       name: 'A2Z',
       render: () => html`<a2z-settings-a2z></a2z-settings-a2z>`,
       enter: async () =>
-        await import('./settings/a2z').then((res) => (res ? true : false)),
+        await import('./settings/a2z').then((res) => !!res),
     },
     {
       path: 'status',
       name: 'Status',
       render: () => html`<a2z-settings-status></a2z-settings-status>`,
       enter: async () =>
-        await import('./settings/status').then((res) => (res ? true : false)),
+        await import('./settings/status').then((res) => !!res),
     },
   ])
 }

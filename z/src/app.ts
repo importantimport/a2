@@ -56,16 +56,14 @@ export class App extends LitElement {
         name: 'Index',
         render: () => html`<a2z-downloads></a2z-downloads>`,
         enter: async () =>
-          await import('./pages/index').then((res) =>
-            res ? true : false
-          ),
+          await import('./pages/index').then((res) => !!res),
       },
       {
         path: '/settings/*',
         name: 'Settings',
         render: () => html`<a2z-settings></a2z-settings>`,
         enter: async () =>
-          await import('./pages/settings').then((res) => (res ? true : false)),
+          await import('./pages/settings').then((res) => !!res),
       },
     ],
     {
