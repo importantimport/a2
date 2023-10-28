@@ -2,7 +2,7 @@ import { compileLitTemplates } from '@lit-labs/compiler'
 import typescript from '@rollup/plugin-typescript'
 import UnheadVite from '@unhead/addons/vite'
 import { builtinModules } from 'node:module'
-import { type Plugin, defineConfig, mergeConfig } from 'vite'
+import { type Plugin, defineConfig, mergeConfig, splitVendorChunkPlugin } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
@@ -27,6 +27,7 @@ export const baseConfig = defineConfig({
       },
     }) as unknown as Plugin,
     UnheadVite(),
+    splitVendorChunkPlugin(),
     tsconfigPaths(),
   ],
 })
