@@ -1,0 +1,8 @@
+:root {
+  --mdui-breakpoint-xs: 0px;
+  --mdui-breakpoint-sm: 600px;
+  --mdui-breakpoint-md: 840px;
+  --mdui-breakpoint-lg: 1080px;
+  --mdui-breakpoint-xl: 1440px;
+  --mdui-breakpoint-xxl: 1920px;
+}

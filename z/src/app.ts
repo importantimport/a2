@@ -11,7 +11,7 @@ import { applyLocale } from '~/lib/utils/locales'
 
 import '~/components/nav'
 
-import '~/app.css'
+import '~/styles/index.css'
 
 const db = await database()
 

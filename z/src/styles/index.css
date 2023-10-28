@@ -1,5 +1,7 @@
 @import '@material-symbols/font-600/outlined.css';
 
+@import 'mdui/index.css';
+
 body {
   margin: 0;
   padding-bottom: 80px;
